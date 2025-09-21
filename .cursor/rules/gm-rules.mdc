@@ -154,6 +154,7 @@ const searchParams = await props.searchParams
 
 ## Documentação e Automação (DX)
 - Manter o README sempre atualizado e útil, refletindo arquitetura, scripts, ambientes e decisões relevantes.
+- Criar uma PRD do projeto em na raiz da pasta /docs e manter atualizado a cada alteração
 - Manter um arquivo AGENT.md com orientações de contribuição, processos de revisão e expectativas de qualidade (quando aplicável)
 - Registrar oportunidades de automação e melhoria contínua do fluxo de trabalho (scripts, CLIs, geradores) e priorizar itens de alto impacto/baixo risco
 - Automatizar tarefas repetitivas sempre que possível (lint, format, commit hooks, checklists de PR, verificação de acessibilidade/performance), com instruções claras de uso

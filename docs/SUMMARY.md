@@ -1,6 +1,6 @@
-## Summary
+## Sumário
 
-### Components
+### Componentes
 - [Button](components/button.md)
 - [Input](components/input.md)
 - [Separator](components/separator.md)
@@ -16,7 +16,7 @@
 ### Hooks
 - [useIsMobile](../hooks/use-is-mobile.md)
 
-### Utilities
+### Utilitários
 - [cn](../lib/cn.md)
 
 ### App

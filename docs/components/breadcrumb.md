@@ -1,8 +1,8 @@
 ## Breadcrumb
 
-Composable breadcrumb navigation components.
+Componentes de navegação breadcrumb (trilha) componíveis.
 
-### Import
+### Importação
 ```tsx
 import {
   Breadcrumb,
@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/breadcrumb";
 ```
 
-### Usage
+### Uso
 ```tsx
 <Breadcrumb>
   <BreadcrumbList>
@@ -35,11 +35,11 @@ import {
 ```
 
 ### API
-- `Breadcrumb`: wrapper `nav` with `aria-label="breadcrumb"`.
-- `BreadcrumbList`: ordered list container.
-- `BreadcrumbItem`: list item.
-- `BreadcrumbLink`: anchor/link; accepts `asChild?`.
-- `BreadcrumbPage`: current page span with `aria-current="page"`.
-- `BreadcrumbSeparator`: custom or default chevron.
-- `BreadcrumbEllipsis`: collapsed items indicator.
+- `Breadcrumb`: `nav` com `aria-label="breadcrumb"`.
+- `BreadcrumbList`: container `ol` da lista.
+- `BreadcrumbItem`: item da lista.
+- `BreadcrumbLink`: link âncora; aceita `asChild?`.
+- `BreadcrumbPage`: página atual com `aria-current="page"`.
+- `BreadcrumbSeparator`: separador padrão (seta) ou customizado via `children`.
+- `BreadcrumbEllipsis`: indicador de itens colapsados.
 

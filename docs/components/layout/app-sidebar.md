@@ -1,13 +1,13 @@
 ## AppSidebar
 
-Opinionated sidebar navigation built on the `Sidebar` primitives with example sections.
+Navegação de sidebar opinativa construída sobre os primitivos de `Sidebar` com seções de exemplo.
 
-### Import
+### Importação
 ```tsx
 import { AppSidebar } from "@/components/layout/app-sidebar";
 ```
 
-### Usage
+### Uso
 ```tsx
 <SidebarProvider>
   <AppSidebar />
@@ -20,7 +20,7 @@ import { AppSidebar } from "@/components/layout/app-sidebar";
 </SidebarProvider>
 ```
 
-### Notes
-- Displays project title and version in the header.
-- Example menu groups provided; replace with your navigation items.
+### Notas
+- Exibe o título do projeto e versão no header.
+- Grupos de menu de exemplo; substitua pelos itens da sua navegação.
 

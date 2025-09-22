@@ -1,14 +1,14 @@
 ## app/page.tsx
 
-Home page rendering a sample dashboard layout using `Sidebar` primitives.
+Página inicial que renderiza um layout de dashboard de exemplo usando os primitivos de `Sidebar`.
 
 ### Export
 - `default`: `Page()`.
 
-### Behavior
-- Wraps content in `SidebarProvider` and uses `AppSidebar`.
-- Renders header with `SidebarTrigger` and a `Breadcrumb`.
+### Comportamento
+- Envolve o conteúdo em `SidebarProvider` e usa `AppSidebar`.
+- Renderiza um header com `SidebarTrigger` e um `Breadcrumb`.
 
-### Usage
-Automatically routed as `/` by Next.js.
+### Uso
+Roteada automaticamente como `/` pelo Next.js.
 

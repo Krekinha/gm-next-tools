@@ -1,13 +1,13 @@
 ## useIsMobile
 
-Detects whether the viewport width is under the mobile breakpoint.
+Detecta se a largura da viewport está abaixo do breakpoint mobile.
 
-### Import
+### Importação
 ```tsx
 import { useIsMobile } from "@/hooks/use-mobile";
 ```
 
-### Usage
+### Uso
 ```tsx
 "use client"
 
@@ -19,8 +19,8 @@ export default function Example() {
 }
 ```
 
-### Behavior
-- Uses `window.matchMedia` to evaluate `(max-width: 767px)`.
-- Returns a boolean, defaulting to `false` until the first effect runs.
-- Listener updates on viewport changes.
+### Comportamento
+- Usa `window.matchMedia` para avaliar `(max-width: 767px)`.
+- Retorna um booleano, iniciando como `false` até o primeiro efeito rodar.
+- Atualiza via listener em mudanças de viewport.
 

@@ -1,13 +1,13 @@
 ## AppLayout
 
-High-level layout component that renders a sidebar, top bar, and a rounded content area.
+Componente de layout de alto nível que renderiza uma sidebar, top bar e uma área de conteúdo arredondada.
 
-### Import
+### Importação
 ```tsx
 import { AppLayout } from "@/components/layout/app-layout";
 ```
 
-### Usage
+### Uso
 ```tsx
 <AppLayout>
   <h1 className="text-xl font-semibold">Page Content</h1>
@@ -15,11 +15,11 @@ import { AppLayout } from "@/components/layout/app-layout";
 </AppLayout>
 ```
 
-### Behavior
-- Uses the `Sidebar` system internally with `SidebarProvider`.
-- Renders a sticky top bar with a `SidebarTrigger` and page title.
-- The `children` render inside a bordered card.
+### Comportamento
+- Usa o sistema `Sidebar` internamente com `SidebarProvider`.
+- Renderiza uma top bar fixa com `SidebarTrigger` e título.
+- `children` é renderizado dentro de um card com borda.
 
 ### Props
-- `children: React.ReactNode` (required)
+- `children: React.ReactNode` (obrigatório)
 

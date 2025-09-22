@@ -1,8 +1,8 @@
 ## Sidebar
 
-Responsive, accessible sidebar system with desktop and mobile support.
+Sistema de sidebar responsivo e acessível com suporte a desktop e mobile.
 
-### Import
+### Importação
 ```tsx
 import {
   Sidebar,
@@ -32,7 +32,7 @@ import {
 } from "@/components/ui/sidebar";
 ```
 
-### Basic Example
+### Exemplo básico
 ```tsx
 <SidebarProvider>
   <Sidebar>
@@ -71,18 +71,18 @@ import {
 </SidebarProvider>
 ```
 
-### Mobile behavior
-- On mobile, the sidebar renders as a `Sheet` drawer automatically.
-- Use `SidebarTrigger` to toggle state; keyboard shortcut: Ctrl/Cmd + `b`.
+### Comportamento no mobile
+- No mobile, a sidebar é renderizada automaticamente como um drawer `Sheet`.
+- Use `SidebarTrigger` para alternar o estado; atalho: Ctrl/Cmd + `b`.
 
-### API Highlights
-- `SidebarProvider(props)`: context provider
-  - `defaultOpen?: boolean` (default true)
-  - `open?: boolean`, `onOpenChange?(open: boolean)` for controlled mode
-  - Provides `useSidebar()` with `{ state, open, setOpen, isMobile, openMobile, setOpenMobile, toggleSidebar }`
-- `Sidebar(props)`: main container
-  - `side?: "left" | "right"` (default "left")
-  - `variant?: "sidebar" | "floating" | "inset"` (default "sidebar")
-  - `collapsible?: "offcanvas" | "icon" | "none"` (default "offcanvas")
-- Building blocks: `SidebarHeader`, `SidebarContent`, `SidebarFooter`, `SidebarGroup*`, `SidebarMenu*`, `SidebarRail`, `SidebarSeparator`, `SidebarInput`, `SidebarInset`, `SidebarTrigger`
+### API — Destaques
+- `SidebarProvider(props)`: provider de contexto
+  - `defaultOpen?: boolean` (padrão: true)
+  - `open?: boolean`, `onOpenChange?(open: boolean)` para modo controlado
+  - Fornece `useSidebar()` com `{ state, open, setOpen, isMobile, openMobile, setOpenMobile, toggleSidebar }`
+- `Sidebar(props)`: contêiner principal
+  - `side?: "left" | "right"` (padrão: "left")
+  - `variant?: "sidebar" | "floating" | "inset"` (padrão: "sidebar")
+  - `collapsible?: "offcanvas" | "icon" | "none"` (padrão: "offcanvas")
+- Blocos de construção: `SidebarHeader`, `SidebarContent`, `SidebarFooter`, `SidebarGroup*`, `SidebarMenu*`, `SidebarRail`, `SidebarSeparator`, `SidebarInput`, `SidebarInset`, `SidebarTrigger`
 

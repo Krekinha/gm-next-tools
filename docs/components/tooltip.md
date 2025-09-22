@@ -1,13 +1,13 @@
 ## Tooltip
 
-Tooltip components built on Radix Tooltip.
+Componentes de tooltip baseados no Radix Tooltip.
 
-### Import
+### Importação
 ```tsx
 import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 ```
 
-### Usage
+### Uso
 ```tsx
 <Tooltip>
   <TooltipTrigger asChild>
@@ -18,9 +18,9 @@ import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip
 ```
 
 ### API
-- `TooltipProvider`: context provider (auto-wrapped in `Tooltip`).
-- `Tooltip`: root wrapper.
-- `TooltipTrigger`: trigger element; supports `asChild`.
-- `TooltipContent`: content portal.
-  - Props: Radix `Content` plus `sideOffset?: number` (default: 0).
+- `TooltipProvider`: provider de contexto (envolvido automaticamente por `Tooltip`).
+- `Tooltip`: wrapper raiz.
+- `TooltipTrigger`: elemento disparador; suporta `asChild`.
+- `TooltipContent`: portal de conteúdo.
+  - Propriedades: Radix `Content` mais `sideOffset?: number` (padrão: 0).
 

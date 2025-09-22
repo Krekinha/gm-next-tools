@@ -1,8 +1,8 @@
 ## Sheet
 
-Dialog-based sheet/drawer built on Radix Dialog.
+Sheet/Drawer baseado em diálogo (Radix Dialog).
 
-### Import
+### Importação
 ```tsx
 import {
   Sheet,
@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/sheet";
 ```
 
-### Usage
+### Uso
 ```tsx
 <Sheet>
   <SheetTrigger asChild>
@@ -36,11 +36,11 @@ import {
 ```
 
 ### API
-- `Sheet`: Radix provider root.
-- `SheetTrigger`: trigger element (supports `asChild`).
-- `SheetClose`: close button.
-- `SheetContent`: drawer panel.
-  - Props: all Radix `Content` props plus `side?: "top" | "right" | "bottom" | "left"` (default: "right").
-- `SheetHeader`, `SheetFooter`: layout wrappers.
-- `SheetTitle`, `SheetDescription`: accessible heading elements.
+- `Sheet`: root provider do Radix.
+- `SheetTrigger`: elemento de disparo (suporta `asChild`).
+- `SheetClose`: botão de fechar.
+- `SheetContent`: painel do drawer.
+  - Propriedades: todas as props do Radix `Content` mais `side?: "top" | "right" | "bottom" | "left"` (padrão: "right").
+- `SheetHeader`, `SheetFooter`: contêineres de layout.
+- `SheetTitle`, `SheetDescription`: elementos acessíveis de título e descrição.
 

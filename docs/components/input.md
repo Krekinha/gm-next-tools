@@ -1,13 +1,13 @@
 ## Input
 
-Styled text input with focus and validation states.
+Campo de texto estilizado com estados de foco e validação.
 
-### Import
+### Importação
 ```tsx
 import { Input } from "@/components/ui/input";
 ```
 
-### Usage
+### Uso
 ```tsx
 <label className="grid gap-2">
   <span>Email</span>
@@ -18,5 +18,5 @@ import { Input } from "@/components/ui/input";
 ```
 
 ### API
-- Props: all native `input` props.
+- Propriedades: todas as props nativas de `input`.
 

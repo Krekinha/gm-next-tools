@@ -1,13 +1,13 @@
 ## Button
 
-Accessible button component with variants and sizes.
+Componente de botão acessível com variantes e tamanhos.
 
-### Import
+### Importação
 ```tsx
 import { Button, buttonVariants } from "@/components/ui/button";
 ```
 
-### Usage
+### Uso
 ```tsx
 <Button>Primary</Button>
 <Button variant="secondary">Secondary</Button>
@@ -24,8 +24,8 @@ import { Button, buttonVariants } from "@/components/ui/button";
 </Button>
 ```
 
-### As child
-Render as another element while preserving styles.
+### Como `asChild`
+Renderize como outro elemento mantendo os estilos.
 ```tsx
 <Button asChild>
   <a href="/settings">Go to settings</a>
@@ -33,13 +33,13 @@ Render as another element while preserving styles.
 ```
 
 ### API
-- Props: all native `button` props plus:
-  - `variant`: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" (default: "default")
-  - `size`: "sm" | "default" | "lg" | "icon" (default: "default")
-  - `asChild?`: boolean (default: false)
+- Propriedades: todas as props nativas de `button` mais:
+  - `variant`: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" (padrão: "default")
+  - `size`: "sm" | "default" | "lg" | "icon" (padrão: "default")
+  - `asChild?`: booleano (padrão: false)
 
-### Utility (optional)
-Use `buttonVariants` to generate class names for custom elements.
+### Utilitário (opcional)
+Use `buttonVariants` para gerar classes em elementos personalizados.
 ```tsx
 import { buttonVariants } from "@/components/ui/button";
 

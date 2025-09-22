@@ -1,15 +1,15 @@
 ## app/layout.tsx (RootLayout)
 
-Root layout for the Next.js App Router.
+Layout raiz para o App Router do Next.js.
 
 ### Exports
-- `metadata: Metadata`: title and description.
+- `metadata: Metadata`: título e descrição.
 - `default`: `RootLayout(props)`.
 
-### Behavior
-- Sets `<html lang="pt-BR">` and applies Google Geist fonts.
-- Wraps all pages with base styles from `app/globals.css`.
+### Comportamento
+- Define `<html lang="pt-BR">` e aplica as fontes Google Geist.
+- Envolve todas as páginas com estilos base de `app/globals.css`.
 
-### Usage
-This is consumed automatically by Next.js. No direct usage required.
+### Uso
+Consumido automaticamente pelo Next.js. Não requer uso direto.
 

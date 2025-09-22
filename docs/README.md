@@ -1,21 +1,21 @@
-## GM Tools Documentation
+## Documentação do GM Tools
 
-This documentation covers all public APIs, components, hooks, and utilities available in this project. Each page includes usage instructions and examples.
+Esta documentação cobre todas as APIs públicas, componentes, hooks e utilitários disponíveis neste projeto. Cada página inclui instruções de uso e exemplos.
 
-### Structure
-- Components: `docs/components/*`
+### Estrutura
+- Componentes: `docs/components/*`
 - Hooks: `docs/hooks/*`
-- Utilities: `docs/lib/*`
-- App Router pages and layout: `docs/app/*`
+- Utilitários: `docs/lib/*`
+- Páginas e layout do App Router: `docs/app/*`
 
-### Quick Start
-1) Install dependencies and run the app.
+### Guia Rápido
+1) Instale as dependências e rode a aplicação.
 ```bash
 pnpm install
 pnpm dev
 ```
-2) Open `http://localhost:3000`.
+2) Abra `http://localhost:3000`.
 
-### Navigation
-See the index in `docs/SUMMARY.md` for a full listing.
+### Navegação
+Consulte o índice em `docs/SUMMARY.md` para a listagem completa.
 

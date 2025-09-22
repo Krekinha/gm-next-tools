@@ -1,13 +1,13 @@
 ## Separator
 
-Accessible horizontal/vertical separator based on Radix UI.
+Separador horizontal/vertical acessível baseado no Radix UI.
 
-### Import
+### Importação
 ```tsx
 import { Separator } from "@/components/ui/separator";
 ```
 
-### Usage
+### Uso
 ```tsx
 <div className="space-y-4">
   <div>Section A</div>
@@ -23,7 +23,7 @@ import { Separator } from "@/components/ui/separator";
 ```
 
 ### API
-- Props: all Radix `Separator.Root` props plus:
-  - `orientation`: "horizontal" | "vertical" (default: "horizontal")
-  - `decorative`: boolean (default: true)
+- Propriedades: todas as props do Radix `Separator.Root` mais:
+  - `orientation`: "horizontal" | "vertical" (padrão: "horizontal")
+  - `decorative`: booleano (padrão: true)
 

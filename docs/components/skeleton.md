@@ -1,13 +1,13 @@
 ## Skeleton
 
-Simple animated skeleton placeholder.
+Placeholder animado simples (skeleton).
 
-### Import
+### Importação
 ```tsx
 import { Skeleton } from "@/components/ui/skeleton";
 ```
 
-### Usage
+### Uso
 ```tsx
 <div className="space-y-2">
   <Skeleton className="h-4 w-1/3" />
@@ -17,5 +17,5 @@ import { Skeleton } from "@/components/ui/skeleton";
 ```
 
 ### API
-- Props: all native `div` props.
+- Propriedades: todas as props nativas de `div`.
 

@@ -161,22 +161,7 @@ const searchParams = await props.searchParams
 - Ao introduzir automações, medir o impacto (tempo economizado, redução de erros) e documentar como habilitar/desabilitar e reverter mudanças quando necessário
 - Garantir que qualquer nova automação não exponha segredos e siga boas práticas de segurança.
 
-## Documentação de Projeto
-- Manter um arquivo `PROJECT.md` na raiz do projeto que documente de forma abrangente:
-  - Visão geral e propósito do projeto
-  - Arquitetura e estrutura de diretórios
-  - Stack tecnológico completo com versões
-  - Funcionalidades principais e fluxos de usuário
-  - Padrões de design e convenções adotadas
-  - Configurações de ambiente e variáveis
-  - Scripts de desenvolvimento e deploy
-  - Dependências críticas e suas funções
-- Atualizar o `PROJECT.md` sempre que houver mudanças significativas na arquitetura, adição de funcionalidades ou alteração de tecnologias
-- Usar linguagem clara e objetiva para facilitar o entendimento tanto para desenvolvedores quanto para IAs
-- Incluir diagramas de fluxo ou arquitetura quando necessário para visualização
-- Documentar decisões técnicas importantes e seus trade-offs
-- Manter seções organizadas com hierarquia clara de headings
-- Usar o Context7 (quando disponível) para consultar melhores práticas de documentação técnica
+
 
 ## Verificação de Alterações com Playwright
 - Sempre que fizer alterações no código que afetem a interface do usuário ou funcionalidades visíveis, use o MCP Playwright para verificar se as mudanças foram aplicadas corretamente

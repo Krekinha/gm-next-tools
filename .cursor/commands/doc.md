@@ -1,0 +1,4 @@
+- Atualizar o README para que ele seja útil, refletindo arquitetura, scripts, ambientes e decisões relevantes.
+- Criar (se não existir) ou atualizar uma PRD do projeto na raiz da pasta /docs
+- Manter um arquivo AGENT.md com orientações de contribuição, processos de revisão e expectativas de qualidade (quando aplicável)
+- Registrar oportunidades de automação e melhoria contínua do fluxo de trabalho (scripts, CLIs, geradores) e priorizar itens de alto impacto/baixo risco

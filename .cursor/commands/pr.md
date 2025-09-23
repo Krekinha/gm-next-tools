@@ -1,0 +1,4 @@
+- Atualiza a PR do projeto na pasta docs/README.md (em pt-BR)
+- Não incluir na documentação os compontes gerados pelo shadcn em components/ui.
+- A documentação contém somente os componentes públicos próprios (layouts e dashboard), hooks, utilitários e páginas do App Router, com navegação centralizada no docs/README.md
+- O arquivo docs/README.md fará referencia aos arquivos docs/PRD.md e docs/AUTOMATION.md trazendo um breve resumo sobre o conteúdo desses arquivos

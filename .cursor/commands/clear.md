@@ -1,0 +1,2 @@
+- traz um relatório de arquivos e pastas não estão sendo utilizados no projeto
+- pede autorização para exclusão desses arquivos

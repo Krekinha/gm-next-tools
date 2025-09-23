@@ -1,6 +1,16 @@
-"use client"
+'use client'
 
-import { ReactNode } from "react"
+import {
+  BarChart3,
+  Calculator,
+  Calendar,
+  Database,
+  FileText,
+  Home,
+  Settings,
+  Users,
+} from 'lucide-react'
+import type { ReactNode } from 'react'
 import {
   Sidebar,
   SidebarContent,
@@ -14,17 +24,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
-} from "@/components/ui/sidebar"
-import {
-  Home,
-  Settings,
-  FileText,
-  Calculator,
-  Calendar,
-  Database,
-  Users,
-  BarChart3,
-} from "lucide-react"
+} from '@/components/ui/sidebar'
 
 interface AppLayoutProps {
   children: ReactNode
@@ -33,57 +33,57 @@ interface AppLayoutProps {
 // Menu items de exemplo para ferramentas de trabalho
 const menuItems = [
   {
-    title: "Ferramentas Principais",
+    title: 'Ferramentas Principais',
     items: [
       {
-        title: "Dashboard",
-        url: "/",
+        title: 'Dashboard',
+        url: '/',
         icon: Home,
-        description: "Visão geral das ferramentas"
+        description: 'Visão geral das ferramentas',
       },
       {
-        title: "Calculadora Avançada",
-        url: "/calculator",
+        title: 'Calculadora Avançada',
+        url: '/calculator',
         icon: Calculator,
-        description: "Cálculos complexos e conversões"
+        description: 'Cálculos complexos e conversões',
       },
       {
-        title: "Gerador de Relatórios",
-        url: "/reports",
+        title: 'Gerador de Relatórios',
+        url: '/reports',
         icon: FileText,
-        description: "Criação automática de relatórios"
+        description: 'Criação automática de relatórios',
       },
       {
-        title: "Agenda Inteligente",
-        url: "/calendar",
+        title: 'Agenda Inteligente',
+        url: '/calendar',
         icon: Calendar,
-        description: "Gestão de compromissos e tarefas"
-      }
-    ]
+        description: 'Gestão de compromissos e tarefas',
+      },
+    ],
   },
   {
-    title: "Dados e Análises",
+    title: 'Dados e Análises',
     items: [
       {
-        title: "Base de Dados",
-        url: "/database",
+        title: 'Base de Dados',
+        url: '/database',
         icon: Database,
-        description: "Consulta e gestão de dados"
+        description: 'Consulta e gestão de dados',
       },
       {
-        title: "Analytics",
-        url: "/analytics",
+        title: 'Analytics',
+        url: '/analytics',
         icon: BarChart3,
-        description: "Análise de performance e métricas"
+        description: 'Análise de performance e métricas',
       },
       {
-        title: "Gestão de Equipe",
-        url: "/team",
+        title: 'Gestão de Equipe',
+        url: '/team',
         icon: Users,
-        description: "Controle de colaboradores"
-      }
-    ]
-  }
+        description: 'Controle de colaboradores',
+      },
+    ],
+  },
 ]
 
 export function AppLayout({ children }: AppLayoutProps) {
@@ -99,13 +99,11 @@ export function AppLayout({ children }: AppLayoutProps) {
               </div>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold">GM Tools</span>
-                <span className="truncate text-xs text-muted-foreground">
-                  Suite de Ferramentas
-                </span>
+                <span className="truncate text-xs text-muted-foreground">Suite de Ferramentas</span>
               </div>
             </div>
           </SidebarHeader>
-          
+
           <SidebarContent className="px-2">
             {menuItems.map((group) => (
               <SidebarGroup key={group.title}>
@@ -122,9 +120,7 @@ export function AppLayout({ children }: AppLayoutProps) {
                           <a href={item.url} className="flex items-center gap-3">
                             <item.icon className="h-4 w-4" />
                             <div className="grid flex-1 text-left text-sm leading-tight">
-                              <span className="truncate font-medium">
-                                {item.title}
-                              </span>
+                              <span className="truncate font-medium">{item.title}</span>
                               <span className="truncate text-xs text-muted-foreground">
                                 {item.description}
                               </span>
@@ -138,11 +134,9 @@ export function AppLayout({ children }: AppLayoutProps) {
               </SidebarGroup>
             ))}
           </SidebarContent>
-          
+
           <SidebarFooter className="border-t px-6 py-4">
-            <div className="text-xs text-muted-foreground">
-              GM Tools v1.0 • 2025
-            </div>
+            <div className="text-xs text-muted-foreground">GM Tools v1.0 • 2025</div>
           </SidebarFooter>
         </Sidebar>
 

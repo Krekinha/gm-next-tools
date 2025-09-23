@@ -1,0 +1,50 @@
+{
+  "$schema": "https://biomejs.dev/schemas/biome.json",
+  "files": {
+    "maxSize": 5000000,
+    "ignoreUnknown": true,
+    "includes": [
+      "app/**",
+      "components/**",
+      "hooks/**",
+      "lib/**",
+      "!components/ui",
+      "!node_modules",
+      "!.next",
+      "!docs",
+      "!.cursor",
+      "!dist",
+      "!out",
+      "!coverage"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noExplicitAny": "error",
+        "noConsole": "error",
+        "noUnknownAtRules": "off"
+      },
+      "style": {
+        "useImportType": "error",
+        "useNodejsImportProtocol": "error"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "double",
+      "trailingCommas": "all",
+      "semicolons": "asNeeded"
+    }
+  }
+}

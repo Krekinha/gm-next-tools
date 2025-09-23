@@ -1,12 +1,8 @@
 import {
   BarChart3,
-  Calculator,
-  Calendar,
-  Database,
   FileText,
   GalleryVerticalEnd,
   Home,
-  Users,
 } from 'lucide-react'
 import type * as React from 'react'
 
@@ -163,7 +159,7 @@ const _data = {
   ],
 }
 
-// Menu items de exemplo para ferramentas de trabalho
+// Menu items reorganizados conforme solicitado
 const menuItems = [
   {
     title: 'Ferramentas Principais',
@@ -175,45 +171,21 @@ const menuItems = [
         description: 'Visão geral das ferramentas',
       },
       {
-        title: 'Calculadora Avançada',
-        url: '/calculator',
-        icon: Calculator,
-        description: 'Cálculos complexos e conversões',
-      },
-      {
-        title: 'Gerador de Relatórios',
-        url: '/reports',
+        title: 'Documentos',
+        url: '/documents',
         icon: FileText,
-        description: 'Criação automática de relatórios',
-      },
-      {
-        title: 'Agenda Inteligente',
-        url: '/calendar',
-        icon: Calendar,
-        description: 'Gestão de compromissos e tarefas',
+        description: 'Gestão de documentos',
       },
     ],
   },
   {
-    title: 'Dados e Análises',
+    title: 'Relatórios',
     items: [
       {
-        title: 'Base de Dados',
-        url: '/database',
-        icon: Database,
-        description: 'Consulta e gestão de dados',
-      },
-      {
-        title: 'Analytics',
-        url: '/analytics',
+        title: 'Relatório técnico',
+        url: '/reports/technical',
         icon: BarChart3,
-        description: 'Análise de performance e métricas',
-      },
-      {
-        title: 'Gestão de Equipe',
-        url: '/team',
-        icon: Users,
-        description: 'Controle de colaboradores',
+        description: 'Relatórios técnicos detalhados',
       },
     ],
   },

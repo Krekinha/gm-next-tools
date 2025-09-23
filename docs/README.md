@@ -29,9 +29,11 @@ pnpm dev
 
 ### Scripts Disponíveis
 ```bash
-pnpm dev          # Servidor de desenvolvimento
-pnpm build        # Build de produção
+pnpm dev          # Servidor de desenvolvimento com Turbopack
+pnpm build        # Build de produção com Turbopack
 pnpm start        # Servidor de produção
+pnpm lint         # Linting com Biome
+pnpm format       # Formatação com Biome
 pnpm check        # Verificar código com Biome
 pnpm fix          # Corrigir problemas automaticamente
 ```
@@ -43,8 +45,9 @@ pnpm fix          # Corrigir problemas automaticamente
 Componentes desenvolvidos internamente, excluindo bibliotecas externas:
 
 #### Layout
-- **[AppLayout](components/layout/app-layout.md)** - Layout principal da aplicação com sidebar
 - **[AppSidebar](components/layout/app-sidebar.md)** - Barra lateral de navegação
+- **[AppTopbar](components/layout/app-topbar.md)** - Barra superior com controles
+- **[MainToggleTheme](components/layout/main-toggle-theme.md)** - Toggle de tema claro/escuro
 
 #### Dashboard
 - **[WelcomeDashboard](components/dashboard/welcome-dashboard.md)** - Componente de boas-vindas do dashboard
@@ -104,18 +107,26 @@ gm-tools/
 ├── app/                    # App Router (páginas e layouts)
 ├── components/            
 │   ├── layout/            # Componentes de layout próprios
+│   │   ├── app-sidebar.tsx    # Barra lateral de navegação
+│   │   ├── app-topbar.tsx     # Barra superior com controles
+│   │   └── main-toggle-theme.tsx # Toggle de tema
 │   ├── dashboard/         # Componentes do dashboard próprios
+│   │   └── welcome-dashboard.tsx # Dashboard de boas-vindas
 │   └── ui/               # Componentes Shadcn (não documentados)
 ├── hooks/                # Custom hooks
+│   └── use-mobile.ts     # Hook para detectar mobile
 ├── lib/                  # Utilitários e helpers
+│   └── utils.ts          # Função cn para classes CSS
+├── providers/            # Providers React
+│   └── theme-provider.tsx # Provider de tema
 └── docs/                 # Esta documentação
 ```
 
 ## 🎨 Padrões de Desenvolvimento
 
 ### Convenções de Código
-- **Componentes**: PascalCase (`AppLayout`)
-- **Arquivos**: kebab-case (`app-layout.tsx`)
+- **Componentes**: PascalCase (`AppTopbar`, `MainToggleTheme`)
+- **Arquivos**: kebab-case (`app-topbar.tsx`, `main-toggle-theme.tsx`)
 - **Hooks**: camelCase com 'use' (`useIsMobile`)
 - **Exports**: Named exports preferencialmente
 

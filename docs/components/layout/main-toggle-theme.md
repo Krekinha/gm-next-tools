@@ -12,6 +12,7 @@ O `MainToggleTheme` é um componente especializado para alternar entre os temas 
 - **Acessível**: Labels descritivos em português
 - **Responsivo**: Adapta-se a diferentes tamanhos de tela
 - **Integrado**: Funciona com o sistema de temas do Next.js
+- **Sem Hidratação**: Não usa useEffect, evitando problemas de hidratação
 
 ## 🚀 Uso
 

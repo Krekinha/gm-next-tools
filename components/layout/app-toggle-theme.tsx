@@ -3,7 +3,7 @@
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
-export function MainToggleTheme() {
+export function AppToggleTheme() {
   const { setTheme } = useTheme()
 
   return (
@@ -14,7 +14,7 @@ export function MainToggleTheme() {
         onClick={() => setTheme('light')}
         aria-label="Ativar tema claro"
       >
-        <Sun className="dark:hover:text-gray-500 dark:text-gray-700 text-amber-400  size-7 rounded-full p-1.5" />
+        <Sun className="dark:hover:text-gray-500 dark:text-gray-700 text-amber-400 size-7 rounded-full p-1.5" />
       </button>
 
       <button type="button" onClick={() => setTheme('dark')} aria-label="Ativar tema escuro">

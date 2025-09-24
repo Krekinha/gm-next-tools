@@ -1,0 +1,29 @@
+---
+alwaysApply: true
+---
+
+## Estilo e Estrutura do Código
+
+### Princípios Gerais
+
+- Escreva código TypeScript conciso e legível
+- Use padrões de programação funcionais e declarativos
+- Siga o princípio `DRY (Don't Repeat Yourself)`
+- Implemente retornos antecipados (early returns) para melhor legibilidade
+- Estruture os componentes de forma lógica: exports, subcomponentes, helpers, types
+- Adicione ao código comentários (em pt-BR) sempre que necessário para explicar as etapas e o fluxo do código, decisões ou comportamentos esperados
+
+### Convenções de Nomenclatura
+
+- Use nomes descritivos com verbos auxiliares (isLoading, hasError)
+- Prefixe os manipuladores de eventos com "handle" (handleClick, handleSubmit)
+- Use letras minúsculas com hífens (`kebab-case`) para diretórios (ex: components/auth-wizard)
+- Prefira `named exports` para componentes.
+
+### Uso de TypeScript
+
+- Use TypeScript para todo o código
+- Preferir interfaces em vez de types
+- Evite enums; use `const maps` em vez disso
+- Implemente segurança de tipo (`type safety`) e inferência adequadas
+- Usar operador `satisfies` para validação de tipos

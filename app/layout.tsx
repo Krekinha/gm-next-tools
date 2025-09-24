@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { AppSidebar } from '@/components/layout/app-sidebar'
+import { AppTopbar } from '@/components/layout/app-topbar'
+import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
 import { ThemeProvider } from '@/providers/theme-provider'
 import './globals.css'
 
@@ -32,7 +35,21 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <SidebarProvider
+            style={
+              {
+                '--sidebar-width': '19rem',
+              } as React.CSSProperties
+            }
+          >
+            <AppSidebar />
+            <SidebarInset>
+              <div className="sticky top-0 z-50">
+                <AppTopbar />
+              </div>
+              <div className="flex flex-1 flex-col gap-4 p-4 pt-0">{children}</div>
+            </SidebarInset>
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>

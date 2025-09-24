@@ -1,312 +1,197 @@
-# AGENT.md - Guia de Contribuição GM Tools
+# AGENT.md - Guia de Contribuição para GM Tools
 
-## 🤖 Sobre Este Documento
+## 🤖 Sobre este Arquivo
 
-Este documento fornece orientações para IAs e desenvolvedores que contribuem com o projeto GM Tools. Contém padrões de código, processos de revisão e expectativas de qualidade.
+Este arquivo contém orientações específicas para agentes de IA que contribuem com o projeto GM Tools. Ele define processos de revisão, expectativas de qualidade e diretrizes para desenvolvimento eficiente.
 
-## 📋 Informações do Projeto
+## 📋 Processo de Contribuição
 
-- **Nome**: GM Tools - Suite de Ferramentas
-- **Versão**: 0.1.0
-- **Stack**: Next.js 15 + React 19 + TypeScript + Tailwind CSS + Shadcn UI
-- **Linting**: Biome 2.2
-- **Package Manager**: pnpm
+### 1. Análise de Solicitações
 
-## 🛠️ Configuração do Ambiente
+Antes de implementar qualquer mudança, siga este processo:
 
-### Pré-requisitos
+1. **Request Analysis**
+   - Determine o tipo da tarefa (criação, depuração, arquitetura, etc.)
+   - Identifique tecnologias envolvidas (React 19, Next.js 15, TypeScript, etc.)
+   - Observe requisitos explícitos e implícitos
+   - Consulte documentação oficial usando Context7 quando necessário
+
+2. **Planejamento da Solução**
+   - Divida a solução em etapas lógicas
+   - Considere modularidade e reutilização
+   - Identifique arquivos e dependências necessárias
+   - Avalie abordagens alternativas
+
+3. **Estratégia de Implementação**
+   - Escolha padrões de design apropriados
+   - Considere implicações de performance
+   - Planeje tratamento de erros e edge cases
+   - Garanta conformidade com acessibilidade (A11y)
+
+### 2. Padrões de Qualidade
+
+#### Código TypeScript
+- Use TypeScript para todo o código
+- Prefira interfaces em vez de types
+- Evite enums; use `const maps` em vez disso
+- Implemente segurança de tipo (`type safety`) adequada
+- Use operador `satisfies` para validação de tipos
+
+#### React e Next.js
+- Prefira `React Server Components (RSC)` sempre que possível
+- Minimize o uso das diretivas `'use client'`
+- Implemente `error boundaries` adequados
+- Use `Suspense` para operações assíncronas
+- Otimize para performance e `Web Vitals`
+
+#### Estrutura e Estilo
+- Escreva código conciso e legível
+- Use padrões de programação funcionais e declarativos
+- Siga o princípio `DRY (Don't Repeat Yourself)`
+- Implemente retornos antecipados (early returns)
+- Adicione comentários em português para explicações complexas
+
+### 3. Convenções de Nomenclatura
+
+- **Arquivos**: `kebab-case` com sufixo apropriado
+- **Componentes**: `PascalCase` com named exports
+- **Funções**: `camelCase` com verbos auxiliares (isLoading, hasError)
+- **Eventos**: Prefixe com "handle" (handleClick, handleSubmit)
+- **Diretórios**: `kebab-case` (ex: components/auth-wizard)
+
+## 🔧 Ferramentas e Automação
+
+### Scripts Disponíveis
 ```bash
-# Versões mínimas
-Node.js >= 18
-pnpm >= 8
-```
-
-### Setup Inicial
-```bash
-# Clone e instale dependências
-git clone <repo-url>
-cd gm-tools
-pnpm install
-
-# Execute em desenvolvimento
-pnpm dev
-
-# Verifique qualidade do código
-pnpm check
-```
-
-## 📝 Padrões de Código
-
-### TypeScript
-- **Strict Mode**: Sempre habilitado
-- **Interfaces vs Types**: Prefira `interface` para objetos, `type` para unions/primitives
-- **Imports**: Use `import type` para importações de tipos
-- **Naming**: PascalCase para componentes, camelCase para funções/variáveis
-
-```typescript
-// ✅ Bom
-interface UserProps {
-  name: string
-  email: string
-}
-
-import type { ReactNode } from 'react'
-
-// ❌ Evitar
-type UserProps = {
-  name: string
-  email: string
-}
-
-import { ReactNode } from 'react' // Sem 'type'
-```
-
-### React Components
-- **Function Components**: Sempre use function declarations
-- **Props Interface**: Defina interfaces explícitas para props
-- **Exports**: Use named exports por padrão
-- **Hooks**: Prefixe custom hooks com 'use'
-
-```typescript
-// ✅ Estrutura recomendada
-interface ButtonProps {
-  variant: 'primary' | 'secondary'
-  children: ReactNode
-  onClick?: () => void
-}
-
-export function Button({ variant, children, onClick }: ButtonProps) {
-  return (
-    <button
-      className={cn('btn', `btn-${variant}`)}
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  )
-}
-```
-
-### Styling
-- **Tailwind CSS**: Use classes utilitárias primeiro
-- **Shadcn UI**: Para componentes base (em `components/ui/`)
-- **Custom Classes**: Apenas quando necessário
-- **Responsive**: Mobile-first approach
-
-```typescript
-// ✅ Bom
-<div className="flex flex-col gap-4 md:flex-row md:gap-6">
-
-// ❌ Evitar
-<div style={{ display: 'flex', flexDirection: 'column' }}>
-```
-
-## 🏗️ Estrutura de Arquivos
-
-### Organização
-```
-components/
-├── ui/           # Shadcn components (não editar diretamente)
-├── layout/       # Componentes de layout
-├── dashboard/    # Componentes específicos
-└── forms/        # Componentes de formulário
-
-hooks/
-├── use-mobile.ts # Custom hooks
-└── use-*.ts      # Padrão: use-kebab-case
-
-lib/
-├── utils.ts      # Utilitários gerais
-├── constants.ts  # Constantes globais
-└── types.ts      # Tipos compartilhados
-```
-
-### Convenções de Nomenclatura
-- **Arquivos**: kebab-case (`user-profile.tsx`)
-- **Componentes**: PascalCase (`UserProfile`)
-- **Hooks**: camelCase com 'use' (`useIsMobile`)
-- **Utilitários**: camelCase (`formatDate`)
-
-## 🔍 Code Quality
-
-### Biome Configuration
-O projeto usa Biome para linting e formatação:
-
-```bash
-# Scripts disponíveis
-pnpm lint         # Verificar problemas
-pnpm format       # Formatar código
-pnpm check        # Verificar + formatar
-pnpm fix          # Corrigir automaticamente
-```
-
-### Regras Importantes
-- **No Console**: Não use `console.log` em produção
-- **Explicit Any**: Evite `any`, use tipos específicos
-- **Import Protocol**: Use `node:` para imports do Node.js
-- **Unused Variables**: Remova variáveis não utilizadas
-
-## 🧪 Testes (Futuro)
-
-### Estratégia de Testes
-```typescript
-// Estrutura planejada
-__tests__/
-├── components/   # Testes de componentes
-├── hooks/        # Testes de hooks
-├── lib/          # Testes de utilitários
-└── e2e/          # Testes end-to-end
-```
-
-### Padrões de Teste
-- **Unit Tests**: Jest + Testing Library
-- **Integration Tests**: Para fluxos críticos
-- **E2E Tests**: Playwright para cenários principais
-- **Coverage**: Meta de 80%+ de cobertura
-
-## 📦 Dependências
-
-### Adição de Dependências
-```bash
-# Produção
-pnpm add package-name
-
 # Desenvolvimento
-pnpm add -D package-name
+pnpm dev          # Servidor de desenvolvimento com Turbopack
+pnpm build        # Build de produção
+pnpm start        # Servidor de produção
+
+# Qualidade de Código
+pnpm lint         # Executa lint com Biome
+pnpm format       # Formata código com Biome
+pnpm check        # Verifica e formata código
+pnpm fix          # Corrige problemas automaticamente
 ```
 
-### Critérios para Novas Dependências
-1. **Necessidade**: Resolve problema específico?
-2. **Manutenção**: Projeto ativo e bem mantido?
-3. **Tamanho**: Bundle size aceitável?
-4. **Compatibilidade**: Funciona com React 19/Next.js 15?
+### Verificação com Playwright
+- Use Playwright para verificar alterações na interface
+- Acesse `http://localhost:3000` após mudanças significativas
+- Capture screenshots para documentar estados
+- Verifique console para erros JavaScript
+- Teste interações básicas quando relevante
 
-### Dependências Aprovadas
-- **UI**: @radix-ui/*, lucide-react
-- **Styling**: tailwindcss, class-variance-authority
-- **Utils**: clsx, tailwind-merge
-- **Forms**: react-hook-form, zod (futuro)
-- **Data**: @tanstack/react-query (futuro)
+## 📚 Documentação
 
-## 🔄 Processo de Contribuição
+### Estrutura de Documentação
+- **README.md**: Visão geral, arquitetura e scripts
+- **docs/README.md**: Documentação técnica detalhada
+- **docs/PRD.md**: Product Requirements Document
+- **docs/AUTOMATION.md**: Oportunidades de automação
+- **.cursor/rules/**: Regras de desenvolvimento organizadas
 
-### Fluxo de Trabalho
-1. **Análise**: Entenda o requisito completamente
-2. **Planejamento**: Use TODO lists para tarefas complexas
-3. **Implementação**: Siga padrões de código
-4. **Verificação**: Execute `pnpm check` antes de finalizar
-5. **Documentação**: Atualize docs se necessário
+### Padrões de Documentação
+- Use português para explicações e comentários
+- Código sempre em inglês
+- Inclua exemplos práticos quando possível
+- Mantenha documentação atualizada com mudanças
+- Use emojis para melhor organização visual
 
-### Commits
-```bash
-# Padrão de commit messages
-feat: adicionar calculadora avançada
-fix: corrigir navegação mobile
-docs: atualizar README com novos scripts
-style: formatar código com Biome
-refactor: melhorar estrutura de componentes
-```
+## 🚨 Processo de Revisão
 
-### Code Review
-- **Funcionalidade**: Código funciona conforme esperado?
-- **Padrões**: Segue convenções do projeto?
-- **Performance**: Não introduz problemas de performance?
-- **Acessibilidade**: Mantém padrões de a11y?
-- **Testes**: Inclui testes quando aplicável?
+### Checklist de Qualidade
+- [ ] Código segue padrões TypeScript estabelecidos
+- [ ] Componentes seguem melhores práticas React 19
+- [ ] Layout responsivo funciona em diferentes telas
+- [ ] Acessibilidade (A11y) implementada adequadamente
+- [ ] Performance otimizada (Web Vitals)
+- [ ] Documentação atualizada
+- [ ] Testes funcionais com Playwright
 
-## 🚀 Deploy e CI/CD
+### Validação de Mudanças
+1. **Verificação Automática**: Execute `pnpm check` antes de finalizar
+2. **Teste Manual**: Use Playwright para verificar interface
+3. **Revisão de Código**: Verifique se segue padrões estabelecidos
+4. **Documentação**: Atualize docs relevantes se necessário
 
-### Build Process
-```bash
-# Build local
-pnpm build
+## 🎯 Expectativas de Qualidade
 
-# Verificar build
-pnpm start
-```
+### Performance
+- First Contentful Paint < 1.5s
+- Largest Contentful Paint < 2.5s
+- Cumulative Layout Shift < 0.1
+- Time to Interactive < 3s
 
-### Ambientes
-- **Development**: `pnpm dev` (localhost:3000)
-- **Preview**: Vercel preview deployments
-- **Production**: Vercel production (main branch)
+### Acessibilidade
+- Score WCAG 2.1 AA > 95%
+- Navegação por teclado completa
+- Screen reader compatibility
+- Contraste de cores adequado
 
-### Checklist de Deploy
-- [ ] `pnpm check` passa sem erros
-- [ ] Build local funciona (`pnpm build`)
-- [ ] Testes passam (quando implementados)
-- [ ] Performance mantida (Core Web Vitals)
-- [ ] Acessibilidade preservada
+### Código
+- Zero bugs críticos
+- Cobertura de tipos TypeScript > 95%
+- Componentes reutilizáveis e modulares
+- Tratamento de erros adequado
 
-## 📚 Recursos e Referências
+## 🔄 Fluxo de Trabalho
+
+### Para Novas Funcionalidades
+1. Analise requisitos usando processo estabelecido
+2. Consulte documentação oficial (Context7)
+3. Implemente seguindo padrões de qualidade
+4. Teste com Playwright
+5. Atualize documentação
+6. Execute checklist de qualidade
+
+### Para Correções de Bugs
+1. Identifique causa raiz do problema
+2. Implemente solução mínima e eficaz
+3. Teste cenários relacionados
+4. Verifique se não introduziu regressões
+5. Documente solução se necessário
+
+### Para Melhorias de Performance
+1. Identifique gargalos específicos
+2. Implemente otimizações focadas
+3. Meça impacto com Web Vitals
+4. Valide em diferentes dispositivos
+5. Documente melhorias implementadas
+
+## 📞 Comunicação
+
+### Postura Esperada
+- **Proativa**: Antecipe necessidades e problemas
+- **Empática**: Considere impacto nas pessoas
+- **Prática**: Foque em soluções executáveis
+- **Comprometida**: Entregue qualidade consistente
+- **Adaptável**: Ajuste abordagem conforme contexto
+
+### Alinhamento Técnico
+- Alinhe escolhas técnicas com objetivos de produto
+- Considere necessidades do mercado e métricas de negócio
+- Sugira melhorias proativamente (performance, acessibilidade, segurança)
+- Documente decisões importantes
+- Peça aprovação para mudanças impactantes
+
+## 🎓 Recursos de Aprendizado
 
 ### Documentação Oficial
-- [Next.js 15 Docs](https://nextjs.org/docs)
-- [React 19 Docs](https://react.dev)
-- [Tailwind CSS Docs](https://tailwindcss.com/docs)
-- [Shadcn UI Docs](https://ui.shadcn.com)
-- [Biome Docs](https://biomejs.dev)
+- [Next.js 15 Documentation](https://nextjs.org/docs)
+- [React 19 Documentation](https://react.dev)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Shadcn UI](https://ui.shadcn.com)
 
-### Ferramentas Úteis
-- [TypeScript Playground](https://www.typescriptlang.org/play)
-- [Tailwind Play](https://play.tailwindcss.com)
-- [Radix UI Primitives](https://www.radix-ui.com/primitives)
-- [Lucide Icons](https://lucide.dev)
-
-## 🐛 Troubleshooting
-
-### Problemas Comuns
-
-**Biome não está funcionando**
-```bash
-# Reinstale o Biome
-pnpm remove @biomejs/biome
-pnpm add -D @biomejs/biome
-```
-
-**Build falhando**
-```bash
-# Limpe cache e reinstale
-rm -rf .next node_modules pnpm-lock.yaml
-pnpm install
-pnpm build
-```
-
-**TypeScript errors**
-```bash
-# Verifique configuração
-npx tsc --noEmit
-```
-
-## 🎯 Objetivos de Qualidade
-
-### Métricas de Performance
-- **First Contentful Paint**: < 1.5s
-- **Largest Contentful Paint**: < 2.5s
-- **Cumulative Layout Shift**: < 0.1
-- **Time to Interactive**: < 3s
-
-### Métricas de Código
-- **Cobertura de Testes**: > 80%
-- **Bundle Size**: < 1MB gzipped
-- **Lighthouse Score**: > 95
-- **Biome Issues**: 0 errors, minimal warnings
-
-## 📞 Suporte
-
-### Contatos
-- **Tech Lead**: [definir]
-- **Documentação**: `/docs/README.md`
-- **Issues**: GitHub Issues (quando disponível)
-
-### Canais de Comunicação
-- **Discussões Técnicas**: [definir canal]
-- **Code Reviews**: Pull Request comments
-- **Documentação**: Este arquivo + `/docs/`
+### Ferramentas do Projeto
+- Biome: Linting e formatação rápida
+- Turbopack: Bundler otimizado para desenvolvimento
+- Playwright: Testes de interface automatizados
+- Context7: Documentação técnica atualizada
 
 ---
 
-**Versão**: 1.0  
 **Última Atualização**: Dezembro 2024  
-**Próxima Revisão**: Janeiro 2025
-
-> Este documento evolui com o projeto. Contribua com melhorias e mantenha-o atualizado!
+**Versão**: 1.0  
+**Responsável**: Equipe GM Tools

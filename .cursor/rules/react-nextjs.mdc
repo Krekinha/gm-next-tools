@@ -1,0 +1,74 @@
+---
+alwaysApply: true
+---
+
+## React 19 e Next.js 15 Melhores Práticas
+
+### Arquitetura de Componentes
+
+- Prefira `React Server Components (RSC)` sempre que possível
+- Minimize o uso das diretivas `'use client'`
+- Implemente `error boundaries` adequados
+- Use `Suspense` para operações assíncronas
+- Otimize para performance e `Web Vitals`
+
+### Gerenciamento de Estado
+
+- Use `useActionState` em vez do `useFormState` (obsoleto)
+- Aproveite o `useFormStatus` aprimorado com novas propriedades (`data`, `method`, `action`)
+- Implemente gerenciamento de estado da URL com `'nuqs'`.
+- Minimize o estado no lado do cliente (`client-side state`)
+
+### APIs de Requisição Assíncrona
+
+```typescript
+// Sempre use as versões assíncronas das APIs de tempo de execução
+const cookieStore = await cookies()
+const headersList = await headers()
+const { isEnabled } = await draftMode()
+
+// Lide com parâmetros assíncronos em layouts/pages
+const params = await props.params
+const searchParams = await props.searchParams
+```
+
+### Next.js Melhores Práticas
+
+#### Estrutura do Projeto
+- Use a estrutura de diretórios do `App Router`
+- Coloque componentes específicos de rota no diretório `app`
+- Coloque componentes compartilhados no diretório `components`
+- Coloque utilitários e helpers no diretório `lib`
+
+#### Componentes
+- Use `Server Components` por padrão
+- Marque componentes do cliente explicitamente com `'use client'`
+- Envolva componentes cliente em `Suspense` com `fallback`
+- Use carregamento dinâmico para componentes não críticos
+- Implemente `error boundaries` adequados
+- Coloque conteúdo estático e interfaces no final do arquivo
+
+#### Performance
+- Otimize imagens: Use formato WebP, otimize dados de tamanho, lazy loading
+- Minimize o uso de `useEffect` e `setState`
+- Prefira `Server Components` (RSC) sempre que possível
+- Use carregamento dinâmico para componentes não críticos
+- Implemente estratégias de cache adequadas
+
+#### Data Fetching
+- Use `Server Components` para busca de dados quando possível
+- Implemente um tratamento de erros adequado para a busca de dados
+- Use estratégias de cache apropriadas
+- Lide adequadamente com os estados de carregamento (loading) e erro
+
+#### Roteamento
+- Use as convenções do `App Router`
+- Implemente estados de carregamento e erro adequados para as rotas
+- Use rotas dinâmicas conforme necessário
+- Trate rotas paralelas quando necessário
+
+#### Formulários e Validação
+- Use Zod para validação de formulários
+- Implemente validação no server-side adequadamente
+- Trate erros de formulário adequadamente
+- Mostre estados de carregamento durante o envio do formulário

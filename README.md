@@ -21,26 +21,32 @@ GM Tools é uma aplicação web moderna construída com Next.js 15 e React 19, p
 ```
 gm-tools/
 ├── app/                    # App Router (Next.js 15)
-│   ├── layout.tsx         # Layout raiz com fontes Geist
+│   ├── layout.tsx         # Layout raiz compartilhado (sidebar + topbar)
 │   ├── page.tsx           # Página principal
+│   ├── dashboard/         # Rota /dashboard
+│   ├── documents/         # Rota /documents
+│   ├── reports/           # Rota /reports/technical
 │   └── globals.css        # Estilos globais
 ├── components/            # Componentes React
 │   ├── ui/               # Componentes Shadcn (ignorados pelo Biome)
-│   ├── layout/           # Componentes de layout
+│   ├── layout/           # Componentes de layout (sidebar, topbar)
 │   └── dashboard/        # Componentes específicos do dashboard
 ├── hooks/                # Custom hooks
 ├── lib/                  # Utilitários e helpers
 ├── docs/                 # Documentação técnica
+├── .cursor/              # Regras de desenvolvimento organizadas
 └── public/              # Assets estáticos
 ```
 
 ### Decisões Arquiteturais
 
 1. **App Router**: Escolhido para aproveitar Server Components e melhor performance
-2. **Biome**: Substituiu ESLint/Prettier para lint e formatação mais rápida
-3. **Shadcn UI**: Componentes customizáveis baseados em Radix UI
-4. **TypeScript**: Tipagem estática para melhor DX e manutenibilidade
-5. **Turbopack**: Bundler mais rápido para desenvolvimento
+2. **Layout Compartilhado**: Sidebar e topbar compartilhados entre todas as rotas via layout root
+3. **Biome**: Substituiu ESLint/Prettier para lint e formatação mais rápida
+4. **Shadcn UI**: Componentes customizáveis baseados em Radix UI
+5. **TypeScript**: Tipagem estática para melhor DX e manutenibilidade
+6. **Turbopack**: Bundler mais rápido para desenvolvimento
+7. **Regras Organizadas**: Sistema de regras modular em `.cursor/rules/` para facilitar manutenção
 
 ## 📦 Scripts Disponíveis
 
@@ -80,17 +86,16 @@ pnpm dev
 # Abra http://localhost:3000
 ```
 
-## 🛠️ Ferramentas Integradas
+## 🛠️ Funcionalidades Implementadas
 
-A aplicação oferece uma interface unificada para várias ferramentas:
+A aplicação oferece uma interface unificada com as seguintes funcionalidades:
 
-- **Dashboard**: Visão geral e acesso rápido
-- **Calculadora Avançada**: Cálculos complexos e conversões
-- **Gerador de Relatórios**: Criação automática de documentos
-- **Agenda Inteligente**: Gestão de compromissos e tarefas
-- **Base de Dados**: Consulta e gestão de informações
-- **Analytics**: Análise de performance e métricas
-- **Gestão de Equipe**: Controle de colaboradores
+- **Dashboard**: Visão geral com métricas e atividades recentes
+- **Gestão de Documentos**: Interface para upload, organização e busca de documentos
+- **Relatórios Técnicos**: Análise de performance e monitoramento do sistema
+- **Layout Responsivo**: Sidebar colapsível e navegação intuitiva
+- **Tema Claro/Escuro**: Alternância de tema com persistência
+- **Navegação Centralizada**: Sistema de rotas com layout compartilhado
 
 ## 🎨 Design System
 
@@ -102,9 +107,11 @@ A aplicação oferece uma interface unificada para várias ferramentas:
 
 ## 📚 Documentação
 
-- **Técnica**: `/docs/README.md` - Documentação completa da API
+- **Técnica**: `/docs/README.md` - Documentação completa da API e componentes
 - **PRD**: `/docs/PRD.md` - Product Requirements Document
+- **Automação**: `/docs/AUTOMATION.md` - Oportunidades de automação e DX
 - **Contribuição**: `AGENT.md` - Guia para contribuidores
+- **Regras**: `/.cursor/rules/` - Regras de desenvolvimento organizadas
 
 ## 🔧 Configuração do Biome
 
@@ -129,10 +136,14 @@ pnpm start
 
 ## 📈 Roadmap
 
-- [ ] Implementação das ferramentas principais
+- [x] Layout compartilhado entre rotas
+- [x] Sistema de navegação com sidebar
+- [x] Páginas de Dashboard, Documentos e Relatórios
+- [x] Sistema de temas (claro/escuro)
+- [x] Documentação técnica organizada
 - [ ] Sistema de autenticação
 - [ ] API integrada
-- [ ] Testes automatizados
+- [ ] Testes automatizados com Playwright
 - [ ] PWA support
 - [ ] Internacionalização
 

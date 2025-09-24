@@ -45,8 +45,8 @@ pnpm fix          # Corrigir problemas automaticamente
 Componentes desenvolvidos internamente, excluindo bibliotecas externas:
 
 #### Layout
-- **[AppSidebar](components/layout/app-sidebar.md)** - Barra lateral de navegação
-- **[AppTopbar](components/layout/app-topbar.md)** - Barra superior com controles
+- **[AppSidebar](components/layout/app-sidebar.md)** - Barra lateral de navegação responsiva com menu de ferramentas
+- **[AppTopbar](components/layout/app-topbar.md)** - Barra superior com controles e toggle de tema
 - **[MainToggleTheme](components/layout/main-toggle-theme.md)** - Toggle de tema claro/escuro
 
 #### Dashboard
@@ -68,8 +68,11 @@ Funções auxiliares e utilitários:
 
 Documentação das páginas e layouts do Next.js:
 
-- **[app/layout.tsx](app/layout.md)** - Layout raiz da aplicação
+- **[app/layout.tsx](app/layout.md)** - Layout raiz compartilhado com sidebar e topbar
 - **[app/page.tsx](app/page.md)** - Página inicial do dashboard
+- **[app/dashboard/page.tsx](app/dashboard/page.md)** - Dashboard com métricas e atividades
+- **[app/documents/page.tsx](app/documents/page.md)** - Gestão de documentos
+- **[app/reports/technical/page.tsx](app/reports/technical/page.md)** - Relatórios técnicos
 
 ## 📖 Documentação Complementar
 
@@ -105,6 +108,11 @@ Documenta oportunidades de automação no fluxo de trabalho:
 ```
 gm-tools/
 ├── app/                    # App Router (páginas e layouts)
+│   ├── layout.tsx          # Layout raiz compartilhado
+│   ├── page.tsx            # Página inicial
+│   ├── dashboard/          # Rota /dashboard
+│   ├── documents/          # Rota /documents
+│   └── reports/            # Rota /reports/technical
 ├── components/            
 │   ├── layout/            # Componentes de layout próprios
 │   │   ├── app-sidebar.tsx    # Barra lateral de navegação
@@ -119,6 +127,7 @@ gm-tools/
 │   └── utils.ts          # Função cn para classes CSS
 ├── providers/            # Providers React
 │   └── theme-provider.tsx # Provider de tema
+├── .cursor/              # Regras de desenvolvimento organizadas
 └── docs/                 # Esta documentação
 ```
 

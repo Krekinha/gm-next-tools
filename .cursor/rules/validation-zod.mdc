@@ -1,0 +1,17 @@
+---
+alwaysApply: true
+---
+
+## Validação de Dados (Zod v4 — detalhamento)
+- Centralizar schemas em um diretório compartilhado (ex.: lib/schemas) para uso isomórfico (server e client)
+- Inferir tipos com z.infer a partir dos schemas e evitar duplicação de definições de tipos
+- Diferenciar claramente as classes de erro:
+  - 400 para falhas de validação de entrada (body, params, query)
+  - 401/403 para autenticação/autorização
+  - 404 para recurso inexistente
+  - 409 para conflitos de estado
+  - 500 para erros inesperados
+- Em formulários, mapear mensagens de erro por campo (field-level) e fornecer feedbacks específicos e acionáveis; exibir estado de carregamento durante o envio
+- Validar no server como fonte da verdade; validação no client serve para UX rápida e não substitui a validação no server
+- Em Server Actions e Route Handlers, validar body/params/query antes da lógica de negócio; retornar erros estruturados sem expor detalhes sensíveis
+- Adotar early returns em validações para manter handlers simples, legíveis e previsíveis.

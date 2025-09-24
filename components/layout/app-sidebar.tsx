@@ -1,9 +1,4 @@
-import {
-  BarChart3,
-  FileText,
-  GalleryVerticalEnd,
-  Home,
-} from 'lucide-react'
+import { BarChart3, FileText, GalleryVerticalEnd, Home } from 'lucide-react'
 import type * as React from 'react'
 
 import {
@@ -162,11 +157,11 @@ const _data = {
 // Menu items reorganizados conforme solicitado
 const menuItems = [
   {
-    title: 'Ferramentas Principais',
+    groupTitle: '',
     items: [
       {
         title: 'Dashboard',
-        url: '/',
+        url: '/dashboard',
         icon: Home,
         description: 'Visão geral das ferramentas',
       },
@@ -179,7 +174,7 @@ const menuItems = [
     ],
   },
   {
-    title: 'Relatórios',
+    groupTitle: 'Relatórios',
     items: [
       {
         title: 'Relatório técnico',
@@ -213,8 +208,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent className="px-2">
         {menuItems.map((group) => (
-          <SidebarGroup key={group.title}>
-            <SidebarGroupLabel>{group.title}</SidebarGroupLabel>
+          <SidebarGroup key={group.groupTitle}>
+            {group.groupTitle && <SidebarGroupLabel>{group.groupTitle}</SidebarGroupLabel>}
             <SidebarGroupContent>
               <SidebarMenu>
                 {group.items.map((item) => (
@@ -228,9 +223,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         <item.icon className="h-4 w-4" />
                         <div className="grid flex-1 text-left text-sm leading-tight">
                           <span className="truncate font-medium">{item.title}</span>
-                          <span className="truncate text-xs text-muted-foreground">
-                            {item.description}
-                          </span>
                         </div>
                       </a>
                     </SidebarMenuButton>

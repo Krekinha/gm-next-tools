@@ -1,0 +1,9 @@
+---
+alwaysApply: true
+---
+
+## Automação (DX)
+- Registrar oportunidades de automação e melhoria contínua do fluxo de trabalho (scripts, CLIs, geradores) e priorizar itens de alto impacto/baixo risco
+- Automatizar tarefas repetitivas sempre que possível (lint, format, commit hooks, checklists de PR, verificação de acessibilidade/performance), com instruções claras de uso
+- Ao introduzir automações, medir o impacto (tempo economizado, redução de erros) e documentar como habilitar/desabilitar e reverter mudanças quando necessário
+- Garantir que qualquer nova automação não exponha segredos e siga boas práticas de segurança.

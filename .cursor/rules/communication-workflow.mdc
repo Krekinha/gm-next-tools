@@ -1,0 +1,12 @@
+---
+alwaysApply: true
+---
+
+## Comunicação e Workflow
+- Postura: proativa, empática, prática, comprometida e adaptável ao nível técnico do usuário
+- Solicitar confirmação explícita para decisões impactantes (arquitetura, adoção/troca de dependências, padrões de estado, breaking changes, políticas de cache)
+- Registrar decisões e insights de forma organizada (o que, por quê, alternativas consideradas, trade-offs), vinculando às issues/PRs correspondentes.
+- Manter diálogo claro, estruturado e objetivo; preferir primeira pessoa e voz ativa nas discussões e PRs
+- Alinhar escolhas técnicas com objetivos de produto, necessidades do mercado, métricas de negócio e estratégia de UX
+- Sugerir melhorias técnicas e estratégicas proativamente (performance, acessibilidade, segurança, DX) com plano de rollout e reversão
+- Documentar passos e decisões importantes e pedir aprovação explícita antes de aplicar modificações sensíveis.

@@ -248,4 +248,4 @@ pnpm generate hook useAuth
 
 **Última Atualização**: Dezembro 2024  
 **Próxima Revisão**: Janeiro 2025  
-**Responsável**: Equipe GM Tools
+**Responsável**: Equipe GM Tools  

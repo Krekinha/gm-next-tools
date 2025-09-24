@@ -72,3 +72,52 @@ const searchParams = await props.searchParams
 - Implemente validação no server-side adequadamente
 - Trate erros de formulário adequadamente
 - Mostre estados de carregamento durante o envio do formulário
+
+#### Hidratação e SSR
+- Use `suppressHydrationWarning` para resolver problemas de hidratação com temas
+- Evite `useEffect` para problemas de hidratação - prefira `suppressHydrationWarning`
+- Aplique `suppressHydrationWarning` no elemento pai que contém componentes de tema
+- Para componentes de tema (`next-themes`), use `suppressHydrationWarning` no container pai
+- Não use `useState` + `useEffect` para resolver hidratação - isso causa re-renders desnecessários
+
+```typescript
+// ✅ CORRETO - Usar suppressHydrationWarning
+export function AppTopbar() {
+  return (
+    <header 
+      className="flex h-16 shrink-0 items-center justify-between gap-2 px-4 bg-background"
+      suppressHydrationWarning
+    >
+      <MainToggleTheme />
+    </header>
+  )
+}
+
+// ✅ CORRETO - Componente de tema simples
+export function MainToggleTheme() {
+  const { setTheme } = useTheme()
+  
+  return (
+    <div className="inline-flex items-center rounded-full border p-0.5">
+      <button onClick={() => setTheme('light')}>
+        <Sun className="size-7" />
+      </button>
+      <button onClick={() => setTheme('dark')}>
+        <Moon className="size-7" />
+      </button>
+    </div>
+  )
+}
+
+// ❌ EVITAR - useEffect para hidratação
+export function MainToggleTheme() {
+  const [mounted, setMounted] = useState(false)
+  
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  
+  if (!mounted) return <div>...</div>
+  // ...
+}
+```

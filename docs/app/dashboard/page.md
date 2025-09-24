@@ -1,8 +1,8 @@
-# Dashboard Page
+# Dashboard Detalhado
 
 ## 📋 Visão Geral
 
-A página do Dashboard (`app/dashboard/page.tsx`) é a página principal da aplicação, fornecendo uma visão geral das ferramentas e métricas do sistema.
+A página do Dashboard (`app/dashboard/page.tsx`) é uma página detalhada (/dashboard) que complementa o dashboard principal, fornecendo métricas avançadas e análises do sistema.
 
 ## 🎯 Funcionalidades
 

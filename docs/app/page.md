@@ -1,8 +1,8 @@
-# Home Page
+# Dashboard Principal (Página Root)
 
 ## 📋 Visão Geral
 
-A página inicial (`app/page.tsx`) é a landing page da aplicação, fornecendo uma visão geral e acesso rápido às principais funcionalidades.
+A página inicial (`app/page.tsx`) é o dashboard principal da aplicação, servindo como página root (/) e fornecendo uma visão geral das métricas e atividades do sistema.
 
 ## 🎯 Funcionalidades
 

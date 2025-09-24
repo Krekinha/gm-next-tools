@@ -22,10 +22,10 @@ GM Tools é uma aplicação web moderna construída com Next.js 15 e React 19, p
 gm-tools/
 ├── app/                    # App Router (Next.js 15)
 │   ├── layout.tsx         # Layout raiz compartilhado (sidebar + topbar)
-│   ├── page.tsx           # Página principal
-│   ├── dashboard/         # Rota /dashboard
-│   ├── documents/         # Rota /documents
-│   ├── reports/           # Rota /reports/technical
+│   ├── page.tsx           # Dashboard principal (rota root /)
+│   ├── dashboard/         # Dashboard detalhado (/dashboard)
+│   ├── documents/         # Gestão de documentos (/documents)
+│   ├── reports/           # Relatórios técnicos (/reports/technical)
 │   └── globals.css        # Estilos globais
 ├── components/            # Componentes React
 │   ├── ui/               # Componentes Shadcn (ignorados pelo Biome)
@@ -90,12 +90,15 @@ pnpm dev
 
 A aplicação oferece uma interface unificada com as seguintes funcionalidades:
 
-- **Dashboard**: Visão geral com métricas e atividades recentes
+- **Dashboard Principal**: Página root (/) com métricas e atividades recentes
+- **Dashboard Detalhado**: Página /dashboard com análise aprofundada
 - **Gestão de Documentos**: Interface para upload, organização e busca de documentos
 - **Relatórios Técnicos**: Análise de performance e monitoramento do sistema
 - **Layout Responsivo**: Sidebar colapsível e navegação intuitiva
-- **Tema Claro/Escuro**: Alternância de tema com persistência
+- **Topbar Fixa**: Barra superior que permanece fixa durante o scroll
+- **Tema Claro/Escuro**: Alternância de tema com persistência (sem problemas de hidratação)
 - **Navegação Centralizada**: Sistema de rotas com layout compartilhado
+- **Logo GMTools**: Branding consistente com link para página principal
 
 ## 🎨 Design System
 
@@ -138,9 +141,13 @@ pnpm start
 
 - [x] Layout compartilhado entre rotas
 - [x] Sistema de navegação com sidebar
+- [x] Dashboard como página principal (rota root)
 - [x] Páginas de Dashboard, Documentos e Relatórios
-- [x] Sistema de temas (claro/escuro)
+- [x] Sistema de temas (claro/escuro) sem problemas de hidratação
+- [x] Topbar fixa durante scroll
+- [x] Logo GMTools com branding consistente
 - [x] Documentação técnica organizada
+- [x] Linting e formatação automatizada com Biome
 - [ ] Sistema de autenticação
 - [ ] API integrada
 - [ ] Testes automatizados com Playwright

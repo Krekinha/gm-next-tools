@@ -7,8 +7,8 @@ O layout raiz da aplicação (`app/layout.tsx`) define a estrutura base comparti
 ## 🎯 Funcionalidades
 
 ### Layout Compartilhado
-- **Sidebar**: Navegação lateral responsiva
-- **Topbar**: Barra superior com controles
+- **Sidebar**: Navegação lateral responsiva com logo GMTools
+- **Topbar**: Barra superior fixa com controles e toggle de tema
 - **SidebarProvider**: Gerenciamento de estado do sidebar
 - **SidebarInset**: Área de conteúdo adaptável
 

@@ -1,6 +1,5 @@
 import {
   AlertTriangle,
-  BarChart3,
   Calendar,
   CheckCircle,
   Clock,

@@ -12,6 +12,7 @@ O `AppTopbar` é o componente responsável pela barra superior da aplicação, c
 - **Sticky**: Permanece fixo no topo durante o scroll
 - **Acessível**: Suporte completo a navegação por teclado
 - **Tema**: Integração com sistema de temas claro/escuro
+- **Hidratação**: Usa suppressHydrationWarning para evitar problemas de hidratação
 
 ## 🚀 Uso
 

@@ -45,9 +45,9 @@ pnpm fix          # Corrigir problemas automaticamente
 Componentes desenvolvidos internamente, excluindo bibliotecas externas:
 
 #### Layout
-- **[AppSidebar](components/layout/app-sidebar.md)** - Barra lateral de navegação responsiva com menu de ferramentas
-- **[AppTopbar](components/layout/app-topbar.md)** - Barra superior com controles e toggle de tema
-- **[MainToggleTheme](components/layout/main-toggle-theme.md)** - Toggle de tema claro/escuro
+- **[AppSidebar](components/layout/app-sidebar.md)** - Barra lateral com logo GMTools e navegação responsiva
+- **[AppTopbar](components/layout/app-topbar.md)** - Barra superior fixa com controles e toggle de tema
+- **[MainToggleTheme](components/layout/main-toggle-theme.md)** - Toggle de tema sem problemas de hidratação
 
 #### Dashboard
 - **[WelcomeDashboard](components/dashboard/welcome-dashboard.md)** - Componente de boas-vindas do dashboard
@@ -69,8 +69,8 @@ Funções auxiliares e utilitários:
 Documentação das páginas e layouts do Next.js:
 
 - **[app/layout.tsx](app/layout.md)** - Layout raiz compartilhado com sidebar e topbar
-- **[app/page.tsx](app/page.md)** - Página inicial do dashboard
-- **[app/dashboard/page.tsx](app/dashboard/page.md)** - Dashboard com métricas e atividades
+- **[app/page.tsx](app/page.md)** - Dashboard principal (página root /)
+- **[app/dashboard/page.tsx](app/dashboard/page.md)** - Dashboard detalhado (/dashboard)
 - **[app/documents/page.tsx](app/documents/page.md)** - Gestão de documentos
 - **[app/reports/technical/page.tsx](app/reports/technical/page.md)** - Relatórios técnicos
 
@@ -108,14 +108,14 @@ Documenta oportunidades de automação no fluxo de trabalho:
 ```
 gm-tools/
 ├── app/                    # App Router (páginas e layouts)
-│   ├── layout.tsx          # Layout raiz compartilhado
-│   ├── page.tsx            # Página inicial
-│   ├── dashboard/          # Rota /dashboard
-│   ├── documents/          # Rota /documents
-│   └── reports/            # Rota /reports/technical
+│   ├── layout.tsx          # Layout raiz compartilhado (sidebar + topbar fixa)
+│   ├── page.tsx            # Dashboard principal (rota root /)
+│   ├── dashboard/          # Dashboard detalhado (/dashboard)
+│   ├── documents/          # Gestão de documentos (/documents)
+│   └── reports/            # Relatórios técnicos (/reports/technical)
 ├── components/            
 │   ├── layout/            # Componentes de layout próprios
-│   │   ├── app-sidebar.tsx    # Barra lateral de navegação
+│   │   ├── app-sidebar.tsx    # Barra lateral com logo GMTools
 │   │   ├── app-topbar.tsx     # Barra superior com controles
 │   │   └── main-toggle-theme.tsx # Toggle de tema
 │   ├── dashboard/         # Componentes do dashboard próprios

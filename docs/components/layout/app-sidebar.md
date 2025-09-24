@@ -21,6 +21,8 @@ import { AppSidebar } from "@/components/layout/app-sidebar";
 ```
 
 ### Notas
-- Exibe o título do projeto e versão no header.
-- Grupos de menu de exemplo; substitua pelos itens da sua navegação.
+- Exibe a logo e nome do app "GMTools" com versão no header.
+- Link da logo aponta para a página root (/) que contém o dashboard.
+- Grupos de menu organizados por categoria (Dashboard, Documentos, Relatórios).
+- Renderização condicional do SidebarGroupLabel baseada no groupTitle.
 

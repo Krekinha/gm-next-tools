@@ -9,7 +9,12 @@
     "lint": "biome lint .",
     "format": "biome format --write .",
     "check": "biome check .",
-    "fix": "biome check --write ."
+    "fix": "biome check --write .",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "create-admin": "tsx scripts/create-admin.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.16.2",
@@ -36,6 +41,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "tailwindcss": "^4",
+    "tsx": "^4.20.5",
     "tw-animate-css": "^1.3.8",
     "typescript": "^5"
   },

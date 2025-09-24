@@ -1,11 +1,8 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { AppSidebar } from '@/components/layout/app-sidebar'
-import { AppTopbar } from '@/components/layout/app-topbar'
-import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
 import { ThemeProvider } from '@/providers/theme-provider'
 import { AuthProvider } from '@/providers/auth-provider'
-import './globals.css'
+import '../globals.css'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -18,11 +15,11 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'GM Tools - Suite de Ferramentas',
-  description: 'Suite completa de ferramentas para automatizar tarefas do dia a dia',
+  title: 'Autenticação - GM Tools',
+  description: 'Faça login para acessar o GM Tools',
 }
 
-export default function RootLayout({
+export default function AuthLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
@@ -37,21 +34,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AuthProvider>
-            <SidebarProvider
-              style={
-                {
-                  '--sidebar-width': '19rem',
-                } as React.CSSProperties
-              }
-            >
-              <AppSidebar />
-              <SidebarInset>
-                <div className="sticky top-0 z-50">
-                  <AppTopbar />
-                </div>
-                <div className="flex flex-1 flex-col gap-4 p-4 pt-0">{children}</div>
-              </SidebarInset>
-            </SidebarProvider>
+            <div className="min-h-screen flex items-center justify-center bg-background">
+              <div className="w-full max-w-md">
+                {children}
+              </div>
+            </div>
           </AuthProvider>
         </ThemeProvider>
       </body>

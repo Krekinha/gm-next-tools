@@ -49,6 +49,12 @@ Componentes desenvolvidos internamente, excluindo bibliotecas externas:
 - **[AppTopbar](components/layout/app-topbar.md)** - Barra superior fixa com controles e toggle de tema
 - **[MainToggleTheme](components/layout/main-toggle-theme.md)** - Toggle de tema sem problemas de hidratação
 
+#### Autenticação
+- **[LoginForm](components/auth/login-form.md)** - Formulário de login com validação Zod
+- **[RegisterForm](components/auth/register-form.md)** - Formulário de registro com validação Zod
+- **[UserMenu](components/auth/user-menu.md)** - Menu dropdown do usuário com logout
+- **[LogoutButton](components/auth/logout-button.md)** - Botão de logout reutilizável
+
 #### Dashboard
 - **[WelcomeDashboard](components/dashboard/welcome-dashboard.md)** - Componente de boas-vindas do dashboard
 
@@ -56,6 +62,7 @@ Componentes desenvolvidos internamente, excluindo bibliotecas externas:
 
 Hooks React desenvolvidos para o projeto:
 
+- **[useAuth](hooks/use-auth.md)** - Hooks de autenticação do Better Auth
 - **[useIsMobile](hooks/use-is-mobile.md)** - Hook para detectar dispositivos móveis
 
 ### 🛠️ Utilitários
@@ -63,6 +70,8 @@ Hooks React desenvolvidos para o projeto:
 Funções auxiliares e utilitários:
 
 - **[cn](lib/cn.md)** - Utilitário para combinação de classes CSS
+- **[auth](lib/auth.md)** - Configuração do Better Auth
+- **[schemas](lib/schemas.md)** - Schemas de validação Zod
 
 ### 📄 Páginas do App Router
 
@@ -70,6 +79,8 @@ Documentação das páginas e layouts do Next.js:
 
 - **[app/layout.tsx](app/layout.md)** - Layout raiz compartilhado com sidebar e topbar
 - **[app/page.tsx](app/page.md)** - Dashboard principal (página root /)
+- **[app/auth/login/page.tsx](app/auth/login.md)** - Página de login
+- **[app/auth/register/page.tsx](app/auth/register.md)** - Página de registro
 - **[app/dashboard/page.tsx](app/dashboard/page.md)** - Dashboard detalhado (/dashboard)
 - **[app/documents/page.tsx](app/documents/page.md)** - Gestão de documentos
 - **[app/reports/technical/page.tsx](app/reports/technical/page.md)** - Relatórios técnicos

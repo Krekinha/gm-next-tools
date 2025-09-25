@@ -73,6 +73,12 @@ pnpm lint         # Executa lint com Biome
 pnpm format       # Formata código com Biome
 pnpm check        # Verifica e formata código
 pnpm fix          # Corrige problemas automaticamente
+
+# Banco de Dados e Autenticação
+pnpm db:studio    # Interface visual do Prisma
+pnpm db:migrate   # Aplica migrações do banco
+pnpm setup-supabase-auth    # Cria tabelas do Better Auth
+pnpm show-supabase-sql     # Exibe SQL para execução manual
 ```
 
 ### Verificação com Playwright
@@ -81,6 +87,8 @@ pnpm fix          # Corrige problemas automaticamente
 - Capture screenshots para documentar estados
 - Verifique console para erros JavaScript
 - Teste interações básicas quando relevante
+- **Teste formulários de autenticação** (login/registro)
+- **Valide proteção de rotas** e redirecionamentos
 
 ## 📚 Documentação
 

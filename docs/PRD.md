@@ -63,29 +63,35 @@ GM Tools é uma suite integrada de ferramentas web que centraliza as principais 
 
 ## 🛠️ Funcionalidades
 
-### MVP (Versão 0.1.0)
+### MVP (Versão 0.1.0) ✅ CONCLUÍDA
 - ✅ **Layout Base**: Sidebar responsiva com navegação
 - ✅ **Dashboard**: Página inicial com métricas e atividades recentes
 - ✅ **Gestão de Documentos**: Interface para upload e organização
 - ✅ **Relatórios Técnicos**: Análise de performance e monitoramento
 - ✅ **Sistema de Navegação**: Roteamento entre ferramentas com layout compartilhado
 - ✅ **Tema Claro/Escuro**: Alternância de tema com persistência
+- ✅ **Sistema de Autenticação**: Login/registro com Better Auth + Supabase
+- ✅ **Proteção de Rotas**: Middleware que protege todas as páginas
+- ✅ **Validação de Dados**: Schemas Zod para formulários
+- ✅ **Menu do Usuário**: Dropdown com informações e logout
 
 ### Versão 0.2.0
 - **Gerador de Relatórios**: Templates e exportação PDF/Excel
 - **Agenda Inteligente**: Calendário integrado com notificações
 - **Base de Dados**: Interface para consulta e gestão de dados
+- **Gestão de Usuários**: Painel administrativo para controle de usuários
+- **Permissões Avançadas**: Sistema de roles mais granular
 
 ### Versão 0.3.0
 - **Analytics**: Dashboards interativos e métricas
-- **Gestão de Equipe**: Controle de usuários e permissões
-- **Sistema de Autenticação**: Login e controle de acesso
+- **Gestão de Equipe**: Controle avançado de usuários e permissões
+- **API Integrada**: Endpoints para integração externa
 
 ### Versão 1.0.0
-- **API Integrada**: Endpoints para integração externa
 - **PWA Support**: Instalação como app nativo
 - **Modo Offline**: Funcionalidades básicas sem internet
 - **Internacionalização**: Suporte a múltiplos idiomas
+- **Monitoramento**: Sistema de logs e métricas avançadas
 
 ## 🎨 Especificações de Design
 
@@ -151,8 +157,9 @@ interface WorkSession {
 ```
 
 ### Integrações
-- **Autenticação**: NextAuth.js ou Clerk
-- **Base de Dados**: Prisma + PostgreSQL
+- **Autenticação**: Better Auth + Supabase (✅ Implementado)
+- **Base de Dados**: Prisma + PostgreSQL + Supabase (✅ Implementado)
+- **Validação**: Zod v4 (✅ Implementado)
 - **Storage**: Vercel Blob ou AWS S3
 - **Analytics**: Vercel Analytics + Custom Events
 - **Monitoramento**: Sentry (errors) + Vercel (performance)
@@ -167,12 +174,15 @@ interface WorkSession {
 - [x] Páginas de Dashboard, Documentos e Relatórios
 - [x] Sistema de temas (claro/escuro)
 - [x] Documentação técnica organizada
+- [x] **Sistema de autenticação completo**
+- [x] **Integração com Supabase + Prisma**
+- [x] **Validação de dados com Zod**
 
 ### Fase 2: Core Features (6 semanas)
 - [ ] Gerador de relatórios
 - [ ] Agenda inteligente
 - [ ] Base de dados básica
-- [ ] Sistema de autenticação
+- [ ] Gestão de usuários avançada
 - [ ] Testes automatizados
 
 ### Fase 3: Analytics e Gestão (4 semanas)

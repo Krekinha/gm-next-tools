@@ -10,15 +10,12 @@
     "format": "biome format --write .",
     "check": "biome check .",
     "fix": "biome check --write .",
-    "db:test": "tsx scripts/test-db-connection.ts",
     "db:studio": "prisma studio",
     "db:migrate": "prisma migrate dev",
     "db:generate": "prisma generate",
-    "setup-supabase": "tsx scripts/setup-supabase.ts",
-    "migrate-supabase": "tsx scripts/migrate-to-supabase.ts",
-    "test-auth": "tsx scripts/test-auth.ts",
-    "reset-auth": "tsx scripts/reset-and-setup-auth.ts",
-    "apply-migration": "tsx scripts/apply-better-auth-migration.ts"
+    "setup-supabase-auth": "tsx scripts/setup-supabase-auth.ts",
+    "show-supabase-sql": "tsx scripts/show-supabase-sql.ts"
+
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

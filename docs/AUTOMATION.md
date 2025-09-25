@@ -19,6 +19,12 @@ pnpm dev          # Desenvolvimento com Turbopack
 pnpm build        # Build otimizado
 pnpm check        # Verificação completa de código
 pnpm fix          # Correção automática de problemas
+
+# Scripts de autenticação e banco
+pnpm setup-supabase-auth    # Cria tabelas do Better Auth
+pnpm show-supabase-sql     # Exibe SQL para execução manual
+pnpm db:studio            # Interface visual do Prisma
+pnpm db:migrate           # Aplica migrações do banco
 ```
 
 **Melhorias Futuras**:
@@ -51,15 +57,36 @@ pnpm fix          # Correção automática de problemas
 - Screenshots automáticos
 - Detecção de erros JavaScript
 - Validação de elementos essenciais
+- **Teste de formulários de autenticação**
+- **Validação de fluxos de login/registro**
 
 **Melhorias Futuras**:
 - [ ] Testes automatizados em CI/CD
 - [ ] Relatórios de performance automáticos
 - [ ] Testes de acessibilidade automatizados
 
+#### 4. Sistema de Autenticação Automatizado
+**Status**: ✅ Implementado  
+**Impacto**: Alto - Autenticação completa sem configuração manual  
+**Risco**: Baixo - Better Auth é estável e bem documentado  
+
+**Funcionalidades Implementadas**:
+- Setup automático de tabelas no Supabase
+- Scripts para criação de migrações
+- Validação automática de formulários com Zod
+- Middleware de proteção de rotas
+- Gerenciamento automático de sessões
+
+**Scripts Disponíveis**:
+```bash
+pnpm setup-supabase-auth    # Cria tabelas automaticamente
+pnpm show-supabase-sql     # Exibe SQL para execução manual
+pnpm db:migrate            # Aplica migrações do Prisma
+```
+
 ### 🔶 Médio Impacto / Baixo Risco
 
-#### 4. Geração Automática de Componentes
+#### 5. Geração Automática de Componentes
 **Status**: ⏳ Planejado  
 **Impacto**: Médio - Acelera criação de novos componentes  
 **Risco**: Baixo - Templates bem definidos  
@@ -78,7 +105,7 @@ pnpm generate hook useAuth
 - Padrões de nomenclatura automáticos
 - Imports automáticos
 
-#### 5. Documentação Automatizada
+#### 6. Documentação Automatizada
 **Status**: ⏳ Planejado  
 **Impacto**: Médio - Mantém docs sempre atualizadas  
 **Risco**: Baixo - Geração baseada em código existente  
@@ -89,7 +116,7 @@ pnpm generate hook useAuth
 - Changelog automático baseado em commits
 - Diagramas de arquitetura atualizados
 
-#### 6. Deploy Automatizado
+#### 7. Deploy Automatizado
 **Status**: ⏳ Planejado  
 **Impacto**: Médio - Reduz tempo de deploy manual  
 **Risco**: Baixo - Vercel tem integração nativa  
@@ -102,7 +129,7 @@ pnpm generate hook useAuth
 
 ### 🔴 Alto Impacto / Médio Risco
 
-#### 7. Sistema de Testes Automatizados
+#### 8. Sistema de Testes Automatizados
 **Status**: ⏳ Planejado  
 **Impacto**: Alto - Garante qualidade do código  
 **Risco**: Médio - Requer configuração cuidadosa  
@@ -113,7 +140,7 @@ pnpm generate hook useAuth
 - Testes de performance com Lighthouse
 - Cobertura de código > 80%
 
-#### 8. Monitoramento Automatizado
+#### 9. Monitoramento Automatizado
 **Status**: ⏳ Planejado  
 **Impacto**: Alto - Detecta problemas proativamente  
 **Risco**: Médio - Requer configuração de alertas  

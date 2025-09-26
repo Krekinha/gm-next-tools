@@ -1,6 +1,7 @@
 'use client'
 
 import { AppToggleTheme } from '@/components/layout/app-toggle-theme'
+import { UserMenu } from '@/components/layout/user-menu'
 import { SidebarTrigger } from '@/components/ui/sidebar'
 
 export function AppTopbar() {
@@ -13,8 +14,9 @@ export function AppTopbar() {
         <SidebarTrigger className="-ml-1" />
       </div>
       {/* Controles do TopBar - Canto direito */}
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
         <AppToggleTheme />
+        <UserMenu />
       </div>
     </header>
   )

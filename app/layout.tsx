@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { Toaster } from 'sonner'
 import { AppSidebar } from '@/components/layout/app-sidebar'
 import { AppTopbar } from '@/components/layout/app-topbar'
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
@@ -50,6 +51,12 @@ export default function RootLayout({
               <div className="flex flex-1 flex-col gap-4 p-4 pt-0">{children}</div>
             </SidebarInset>
           </SidebarProvider>
+          <Toaster 
+            position="top-right"
+            expand={true}
+            richColors={true}
+            closeButton={true}
+          />
         </ThemeProvider>
       </body>
     </html>

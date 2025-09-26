@@ -51,11 +51,15 @@ pnpm fix          # Correção automática de problemas
 - Screenshots automáticos
 - Detecção de erros JavaScript
 - Validação de elementos essenciais
+- **Teste de fluxos de autenticação**
+- **Validação de proteção de rotas**
 
 **Melhorias Futuras**:
 - [ ] Testes automatizados em CI/CD
 - [ ] Relatórios de performance automáticos
 - [ ] Testes de acessibilidade automatizados
+- [ ] **Testes de middleware de autenticação**
+- [ ] **Validação automática de schemas Zod**
 
 ### 🔶 Médio Impacto / Baixo Risco
 

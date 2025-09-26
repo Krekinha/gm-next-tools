@@ -63,23 +63,30 @@ GM Tools é uma suite integrada de ferramentas web que centraliza as principais 
 
 ## 🛠️ Funcionalidades
 
-### MVP (Versão 0.1.0)
+### MVP (Versão 0.1.0) ✅ CONCLUÍDA
 - ✅ **Layout Base**: Sidebar responsiva com navegação
 - ✅ **Dashboard**: Página inicial com métricas e atividades recentes
 - ✅ **Gestão de Documentos**: Interface para upload e organização
 - ✅ **Relatórios Técnicos**: Análise de performance e monitoramento
 - ✅ **Sistema de Navegação**: Roteamento entre ferramentas com layout compartilhado
 - ✅ **Tema Claro/Escuro**: Alternância de tema com persistência
+- ✅ **Sistema de Autenticação**: Login, registro e proteção de rotas
+- ✅ **Middleware de Segurança**: Proteção automática de rotas
+- ✅ **Layout de Auth**: Interface específica para autenticação
+- ✅ **Menu do Usuário**: Gerenciamento de sessão e logout
 
-### Versão 0.2.0
+### Versão 0.2.0 (Em Desenvolvimento)
+- **API Integrada**: Endpoints com Supabase para dados dinâmicos
+- **Sistema de Permissões**: Controle de acesso baseado em roles
+- **Gestão de Perfil**: Edição completa de dados do usuário
+- **Configurações Avançadas**: Personalização da interface
+- **Testes Automatizados**: Cobertura com Playwright
+
+### Versão 0.3.0
 - **Gerador de Relatórios**: Templates e exportação PDF/Excel
 - **Agenda Inteligente**: Calendário integrado com notificações
 - **Base de Dados**: Interface para consulta e gestão de dados
-
-### Versão 0.3.0
 - **Analytics**: Dashboards interativos e métricas
-- **Gestão de Equipe**: Controle de usuários e permissões
-- **Sistema de Autenticação**: Login e controle de acesso
 
 ### Versão 1.0.0
 - **API Integrada**: Endpoints para integração externa
@@ -116,6 +123,9 @@ GM Tools é uma suite integrada de ferramentas web que centraliza as principais 
 - **Language**: TypeScript (strict mode)
 - **Build**: Turbopack (desenvolvimento) + Webpack (produção)
 - **Code Quality**: Biome (linting + formatting)
+- **Autenticação**: Supabase Auth + PostgreSQL
+- **Validação**: Zod v4
+- **Notificações**: Sonner
 
 ### Estrutura de Dados
 ```typescript
@@ -151,9 +161,9 @@ interface WorkSession {
 ```
 
 ### Integrações
-- **Autenticação**: NextAuth.js ou Clerk
-- **Base de Dados**: Prisma + PostgreSQL
-- **Storage**: Vercel Blob ou AWS S3
+- **Autenticação**: Supabase Auth (implementado)
+- **Base de Dados**: Supabase PostgreSQL (implementado)
+- **Storage**: Supabase Storage (planejado)
 - **Analytics**: Vercel Analytics + Custom Events
 - **Monitoramento**: Sentry (errors) + Vercel (performance)
 
@@ -167,19 +177,22 @@ interface WorkSession {
 - [x] Páginas de Dashboard, Documentos e Relatórios
 - [x] Sistema de temas (claro/escuro)
 - [x] Documentação técnica organizada
+- [x] **Sistema de autenticação completo**
+- [x] **Middleware de proteção de rotas**
+- [x] **Páginas de login, registro e recuperação**
 
-### Fase 2: Core Features (6 semanas)
+### Fase 2: Core Features (6 semanas) 🚧 EM ANDAMENTO
+- [ ] API integrada com Supabase
+- [ ] Sistema de permissões e roles
+- [ ] Gestão de perfil do usuário
+- [ ] Configurações avançadas
+- [ ] Testes automatizados com Playwright
+
+### Fase 3: Analytics e Gestão (4 semanas)
 - [ ] Gerador de relatórios
 - [ ] Agenda inteligente
 - [ ] Base de dados básica
-- [ ] Sistema de autenticação
-- [ ] Testes automatizados
-
-### Fase 3: Analytics e Gestão (4 semanas)
 - [ ] Dashboard de analytics
-- [ ] Gestão de equipe
-- [ ] Permissões e roles
-- [ ] API endpoints
 
 ### Fase 4: Otimização e Deploy (3 semanas)
 - [ ] PWA implementation
@@ -189,11 +202,13 @@ interface WorkSession {
 
 ## 🔒 Requisitos de Segurança
 
-### Autenticação e Autorização
-- Login obrigatório para acesso às ferramentas
-- Controle de permissões baseado em roles
-- Sessões seguras com timeout automático
-- Two-factor authentication (opcional)
+### Autenticação e Autorização ✅ IMPLEMENTADO
+- ✅ Login obrigatório para acesso às ferramentas
+- ✅ Middleware de proteção automática de rotas
+- ✅ Sessões seguras com Supabase Auth
+- ✅ Redirecionamentos contextuais
+- [ ] Controle de permissões baseado em roles
+- [ ] Two-factor authentication (opcional)
 
 ### Proteção de Dados
 - Criptografia de dados sensíveis

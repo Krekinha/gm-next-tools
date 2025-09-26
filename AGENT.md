@@ -73,6 +73,10 @@ pnpm lint         # Executa lint com Biome
 pnpm format       # Formata código com Biome
 pnpm check        # Verifica e formata código
 pnpm fix          # Corrige problemas automaticamente
+
+# Dependências
+pnpm install      # Instala dependências
+pnpm add <pkg>    # Adiciona nova dependência
 ```
 
 ### Verificação com Playwright
@@ -81,6 +85,9 @@ pnpm fix          # Corrige problemas automaticamente
 - Capture screenshots para documentar estados
 - Verifique console para erros JavaScript
 - Teste interações básicas quando relevante
+- **Teste fluxos de autenticação**: login, logout, redirecionamentos
+- **Verifique proteção de rotas**: acesso sem autenticação
+- **Valide middleware**: comportamento em diferentes estados
 
 ## 📚 Documentação
 
@@ -108,12 +115,18 @@ pnpm fix          # Corrige problemas automaticamente
 - [ ] Performance otimizada (Web Vitals)
 - [ ] Documentação atualizada
 - [ ] Testes funcionais com Playwright
+- [ ] **Autenticação funcionando corretamente**
+- [ ] **Middleware de proteção ativo**
+- [ ] **Validação de formulários com Zod**
+- [ ] **Estados de loading e erro implementados**
 
 ### Validação de Mudanças
 1. **Verificação Automática**: Execute `pnpm check` antes de finalizar
 2. **Teste Manual**: Use Playwright para verificar interface
 3. **Revisão de Código**: Verifique se segue padrões estabelecidos
 4. **Documentação**: Atualize docs relevantes se necessário
+5. **Teste de Autenticação**: Valide login, logout e proteção de rotas
+6. **Validação de Formulários**: Teste schemas Zod e mensagens de erro
 
 ## 🎯 Expectativas de Qualidade
 
@@ -141,16 +154,20 @@ pnpm fix          # Corrige problemas automaticamente
 1. Analise requisitos usando processo estabelecido
 2. Consulte documentação oficial (Context7)
 3. Implemente seguindo padrões de qualidade
-4. Teste com Playwright
-5. Atualize documentação
-6. Execute checklist de qualidade
+4. **Configure autenticação se necessário**
+5. **Valide com schemas Zod**
+6. Teste com Playwright
+7. Atualize documentação
+8. Execute checklist de qualidade
 
 ### Para Correções de Bugs
 1. Identifique causa raiz do problema
 2. Implemente solução mínima e eficaz
-3. Teste cenários relacionados
-4. Verifique se não introduziu regressões
-5. Documente solução se necessário
+3. **Teste autenticação se afetada**
+4. **Valide middleware se modificado**
+5. Teste cenários relacionados
+6. Verifique se não introduziu regressões
+7. Documente solução se necessário
 
 ### Para Melhorias de Performance
 1. Identifique gargalos específicos
@@ -183,12 +200,18 @@ pnpm fix          # Corrige problemas automaticamente
 - [TypeScript Handbook](https://www.typescriptlang.org/docs)
 - [Tailwind CSS](https://tailwindcss.com/docs)
 - [Shadcn UI](https://ui.shadcn.com)
+- [Supabase Auth](https://supabase.com/docs/guides/auth)
+- [Zod Validation](https://zod.dev)
+- [Sonner Notifications](https://sonner.emilkowal.ski)
 
 ### Ferramentas do Projeto
 - Biome: Linting e formatação rápida
 - Turbopack: Bundler otimizado para desenvolvimento
 - Playwright: Testes de interface automatizados
 - Context7: Documentação técnica atualizada
+- Supabase: Autenticação e banco de dados
+- Zod: Validação de schemas
+- Sonner: Sistema de notificações
 
 ---
 

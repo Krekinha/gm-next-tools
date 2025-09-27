@@ -14,17 +14,28 @@ Este documento registra oportunidades de automação e melhoria contínua do flu
 **Risco**: Baixo - Scripts simples e bem testados  
 
 ```bash
-# Scripts já disponíveis
-pnpm dev          # Desenvolvimento com Turbopack
-pnpm build        # Build otimizado
-pnpm check        # Verificação completa de código
+# Scripts já disponíveis no package.json
+pnpm dev          # Desenvolvimento com Turbopack (--turbopack flag)
+pnpm build        # Build otimizado com Turbopack (--turbopack flag)
+pnpm start        # Servidor de produção
+pnpm lint         # Linting com Biome
+pnpm format       # Formatação com Biome
+pnpm check        # Verificação completa (lint + format)
 pnpm fix          # Correção automática de problemas
 ```
+
+**Análise dos Scripts Atuais**:
+- ✅ **Turbopack**: Bundler mais rápido para dev e build
+- ✅ **Biome**: Linting e formatação unificados
+- ✅ **Scripts Otimizados**: Comandos concisos e eficientes
+- ✅ **Exclusões Configuradas**: `components/ui` excluído do linting
 
 **Melhorias Futuras**:
 - [ ] Script para setup inicial do projeto (`pnpm setup`)
 - [ ] Script para deploy automático (`pnpm deploy`)
 - [ ] Script para análise de dependências (`pnpm audit`)
+- [ ] Script para testes automatizados (`pnpm test`)
+- [ ] Script para limpeza de cache (`pnpm clean`)
 
 #### 2. Linting e Formatação Automatizada
 **Status**: ✅ Implementado  
@@ -41,7 +52,7 @@ pnpm fix          # Correção automática de problemas
 - [ ] GitHub Actions para CI/CD
 - [ ] Integração com VS Code para formatação automática
 
-#### 3. Verificação Automatizada com Playwright
+#### 3. Verificação Automatizada com Chrome DevTools MCP server
 **Status**: ✅ Implementado  
 **Impacto**: Alto - Detecta problemas de interface automaticamente  
 **Risco**: Baixo - Testes não críticos para funcionamento  
@@ -82,18 +93,53 @@ pnpm generate hook useAuth
 - Padrões de nomenclatura automáticos
 - Imports automáticos
 
-#### 5. Documentação Automatizada
+
+#### 6. Análise de Dependências Automatizada
 **Status**: ⏳ Planejado  
-**Impacto**: Médio - Mantém docs sempre atualizadas  
-**Risco**: Baixo - Geração baseada em código existente  
+**Impacto**: Médio - Detecta vulnerabilidades e atualizações  
+**Risco**: Baixo - Ferramentas estáveis e bem testadas  
 
-**Funcionalidades Propostas**:
-- Geração automática de README para componentes
-- Documentação de APIs baseada em TypeScript
-- Changelog automático baseado em commits
-- Diagramas de arquitetura atualizados
+**Análise do package.json Atual**:
+```json
+{
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",      // Validação de formulários
+    "@radix-ui/react-*": "^1.x.x",         // Componentes primitivos
+    "@supabase/ssr": "^0.7.0",           // Autenticação SSR
+    "@supabase/supabase-js": "^2.58.0",   // Cliente Supabase
+    "class-variance-authority": "^0.7.1", // Variantes de classe
+    "clsx": "^2.1.1",                     // Utilitário de classes
+    "lucide-react": "^0.544.0",           // Ícones
+    "next": "15.5.3",                     // Framework principal
+    "next-themes": "^0.4.6",              // Sistema de temas
+    "react": "19.1.0",                    // Biblioteca principal
+    "react-dom": "19.1.0",                // DOM renderer
+    "react-hook-form": "^7.63.0",         // Gerenciamento de formulários
+    "sonner": "^2.0.7",                   // Notificações
+    "tailwind-merge": "^3.3.1",           // Merge de classes Tailwind
+    "zod": "^4.1.11"                      // Validação de schemas
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.4",           // Linting e formatação
+    "@tailwindcss/postcss": "^4",         // PostCSS para Tailwind
+    "@types/node": "^20",                 // Tipos Node.js
+    "@types/react": "^19",                // Tipos React
+    "@types/react-dom": "^19",            // Tipos React DOM
+    "tailwindcss": "^4",                  // Framework CSS
+    "tw-animate-css": "^1.3.8",          // Animações Tailwind
+    "typescript": "^5"                    // Compilador TypeScript
+  }
+}
+```
 
-#### 6. Deploy Automatizado
+**Oportunidades de Automação**:
+- [ ] **Dependabot**: Atualizações automáticas de dependências
+- [ ] **npm audit**: Verificação de vulnerabilidades
+- [ ] **Bundle analyzer**: Análise de tamanho do bundle
+- [ ] **Dependency tracking**: Monitoramento de dependências desatualizadas
+- [ ] **License checking**: Verificação de licenças compatíveis
+
+#### 7. Deploy Automatizado
 **Status**: ⏳ Planejado  
 **Impacto**: Médio - Reduz tempo de deploy manual  
 **Risco**: Baixo - Vercel tem integração nativa  
@@ -113,7 +159,7 @@ pnpm generate hook useAuth
 
 **Estratégia**:
 - Testes unitários com Vitest
-- Testes de integração com Playwright
+- Testes de integração com Chrome DevTools MCP server
 - Testes de performance com Lighthouse
 - Cobertura de código > 80%
 
@@ -135,18 +181,24 @@ pnpm generate hook useAuth
 - [ ] GitHub Actions básicas (lint, build, test)
 - [ ] Scripts de setup e deploy
 - [ ] Configuração de VS Code
+- [ ] **Dependabot para atualizações automáticas**
+- [ ] **npm audit para verificação de vulnerabilidades**
 
 ### Fase 2: Desenvolvimento (3 semanas)
 - [ ] Geração automática de componentes
 - [ ] Documentação automatizada
 - [ ] Testes automatizados básicos
 - [ ] Deploy automatizado
+- [ ] **Bundle analyzer para otimização**
+- [ ] **License checking automático**
 
 ### Fase 3: Monitoramento (2 semanas)
 - [ ] Sistema de monitoramento
 - [ ] Alertas automáticos
 - [ ] Relatórios de performance
 - [ ] Análise de dependências
+- [ ] **Dependency tracking avançado**
+- [ ] **Relatórios de segurança automatizados**
 
 ## 📈 Métricas de Sucesso
 

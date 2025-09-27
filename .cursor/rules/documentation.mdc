@@ -1,0 +1,26 @@
+---
+description: Regras que devem ser observadas ao criar/atualizar a documentação do projeto
+globs:
+alwaysApply: false
+---
+
+
+# Estrutura da documentação
+- Toda documentação devera ser feita dentro da pasta /docs
+- a estrutura de arquivos da documentação segue a mesma estrura do arquivos do projeto:
+Exemplo: Para documentar funcionalidades da página `app/dashboard/page.tsx`, foi criado o documento `docs/app/dashboard/page.md` 
+
+# README
+- Atualizar o README para que ele seja útil, refletindo arquitetura, ambientes e decisões relevantes do projeto.
+- Crie/atualize um sumário para cada documento criado, com uma breve descrição do documento
+
+# AGENT
+- Criar/Atualizar um arquivo /AGENT.md. Este arquivo contém orientações específicas para agentes de IA que contribuem com o projeto GM Tools. Ele define processos de revisão, expectativas de qualidade e diretrizes para desenvolvimento eficiente
+
+# PRD
+- Criar/Atualizar a PRD do projeto na em docs/PRD.md
+- Não incluir na documentação os compontes gerados pelo shadcn em components/ui. Apenas os componentes públicos próprios (layouts e dashboard), hooks, utilitários e páginas do App Router, serão incluídos na PRD
+
+# OUTROS REGISTROS
+
+- Documentar oportunidades de automação e melhoria contínua do fluxo de trabalho (scripts do package.json, CLIs, geradores) e priorizar itens de alto impacto/baixo risco

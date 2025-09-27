@@ -64,16 +64,34 @@ GM Tools é uma suite integrada de ferramentas web que centraliza as principais 
 ## 🛠️ Funcionalidades
 
 ### MVP (Versão 0.1.0) ✅ CONCLUÍDA
-- ✅ **Layout Base**: Sidebar responsiva com navegação
-- ✅ **Dashboard**: Página inicial com métricas e atividades recentes
-- ✅ **Gestão de Documentos**: Interface para upload e organização
-- ✅ **Relatórios Técnicos**: Análise de performance e monitoramento
-- ✅ **Sistema de Navegação**: Roteamento entre ferramentas com layout compartilhado
-- ✅ **Tema Claro/Escuro**: Alternância de tema com persistência
-- ✅ **Sistema de Autenticação**: Login, registro e proteção de rotas
-- ✅ **Middleware de Segurança**: Proteção automática de rotas
-- ✅ **Layout de Auth**: Interface específica para autenticação
-- ✅ **Menu do Usuário**: Gerenciamento de sessão e logout
+
+#### 🏗️ Componentes Próprios Implementados
+- ✅ **AppSidebar**: Sidebar responsiva com navegação principal
+- ✅ **AppTopbar**: Barra superior fixa com logo e menu do usuário
+- ✅ **AppToggleTheme**: Alternância de tema claro/escuro sem problemas de hidratação
+- ✅ **UserMenu**: Menu dropdown do usuário com logout e navegação
+- ✅ **ModeToggle**: Componente de alternância de tema reutilizável
+
+#### 📱 Páginas e Funcionalidades
+- ✅ **Dashboard Principal**: Página inicial (/) com métricas e atividades recentes
+- ✅ **Dashboard Detalhado**: Página /dashboard com análise aprofundada
+- ✅ **Gestão de Documentos**: Interface para upload e organização (/documents)
+- ✅ **Relatórios Técnicos**: Análise de performance (/reports/technical)
+- ✅ **Perfil do Usuário**: Página de gerenciamento (/profile)
+- ✅ **Configurações**: Página de configurações (/settings)
+
+#### 🔐 Sistema de Autenticação
+- ✅ **Páginas de Auth**: Login, registro e recuperação de senha
+- ✅ **Layout de Auth**: Interface específica sem sidebar/topbar
+- ✅ **Middleware de Proteção**: Proteção automática de rotas
+- ✅ **Sessões Persistentes**: Gerenciamento com Supabase Auth
+- ✅ **Redirecionamentos**: Automáticos baseados no status de autenticação
+
+#### 🎨 Sistema de Design
+- ✅ **Layout Compartilhado**: Sidebar e topbar compartilhados entre rotas
+- ✅ **Tema Unificado**: Sistema de cores consistente
+- ✅ **Responsividade**: Mobile-first com breakpoints bem definidos
+- ✅ **Navegação Centralizada**: Sistema de rotas com layout compartilhado
 
 ### Versão 0.2.0 (Em Desenvolvimento)
 - **API Integrada**: Endpoints com Supabase para dados dinâmicos
@@ -97,9 +115,18 @@ GM Tools é uma suite integrada de ferramentas web que centraliza as principais 
 ## 🎨 Especificações de Design
 
 ### Design System
+
+#### Componentes Próprios
+- **AppSidebar**: Navegação principal com collapse responsivo
+- **AppTopbar**: Barra superior fixa com branding e ações do usuário
+- **AppToggleTheme**: Alternância de tema sem problemas de hidratação
+- **UserMenu**: Menu dropdown com perfil e logout
+- **ModeToggle**: Componente reutilizável para alternância de tema
+
+#### Sistema Visual
 - **Cores**: Tema claro/escuro baseado em Tailwind
 - **Tipografia**: Geist Sans (interface) + Geist Mono (código)
-- **Componentes**: Shadcn UI com Radix primitives
+- **Componentes Base**: Shadcn UI com Radix primitives (componentes/ui)
 - **Layout**: Grid responsivo com sidebar colapsível
 - **Ícones**: Lucide React (consistência visual)
 
@@ -128,6 +155,37 @@ GM Tools é uma suite integrada de ferramentas web que centraliza as principais 
 - **Notificações**: Sonner
 
 ### Estrutura de Dados
+
+#### Componentes Próprios
+```typescript
+// Layout Components
+interface AppSidebarProps {
+  className?: string
+  children?: React.ReactNode
+}
+
+interface AppTopbarProps {
+  className?: string
+  children?: React.ReactNode
+}
+
+interface AppToggleThemeProps {
+  className?: string
+}
+
+interface UserMenuProps {
+  user: User | null
+  onLogout: () => void
+}
+
+// Theme Components
+interface ModeToggleProps {
+  className?: string
+  variant?: 'default' | 'outline'
+}
+```
+
+#### Entidades Principais
 ```typescript
 // Usuário
 interface User {

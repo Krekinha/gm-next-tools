@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 /**
  * Layout específico para páginas de autenticação
- * 
+ *
  * Características:
  * - SEM sidebar e topbar (interface limpa)
  * - Foco total no processo de autenticação
@@ -48,24 +48,18 @@ export default function AuthLayout({
               <div className="w-full max-w-md space-y-6">
                 {/* Logo/Título */}
                 <div className="text-center">
-                  <h1 className="text-3xl font-bold tracking-tight">
-                    GM Tools
-                  </h1>
+                  <h1 className="text-3xl font-bold tracking-tight">GM Tools</h1>
                   <p className="text-muted-foreground mt-2">
                     Suite de ferramentas para automatizar tarefas
                   </p>
                 </div>
 
                 {/* Conteúdo das páginas de auth */}
-                <div className="space-y-4">
-                  {children}
-                </div>
+                <div className="space-y-4">{children}</div>
 
                 {/* Footer */}
                 <div className="text-center text-sm text-muted-foreground">
-                  <p>
-                    © 2024 GM Tools. Todos os direitos reservados.
-                  </p>
+                  <p>© 2024 GM Tools. Todos os direitos reservados.</p>
                 </div>
               </div>
             </div>

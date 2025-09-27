@@ -34,15 +34,11 @@ Este arquivo serve como índice principal para todas as regras de desenvolviment
 - Processo de decisões técnicas
 - Alinhamento com objetivos de produto
 
-### 📚 [Documentação e DX](./documentation-dx.mdc)
-- Documentação do projeto
-- Automação e experiência do desenvolvedor
-- Manutenção de arquivos de referência
 
-### 🧪 [Testes e Verificação](./testing-playwright.mdc)
-- Verificação com Playwright
+### 🧪 [Testes e Verificação](./testing-frontend.mdc)
+- Verificação com Chrome DevTools MCP server
 - Testes de interface
-- Validação de funcionalidades
+- Validação de funcionalidades implementadas
 
 ## Como Usar
 

@@ -50,7 +50,7 @@ const searchParams = await props.searchParams
 
 #### Performance
 - Otimize imagens: Use formato WebP, otimize dados de tamanho, lazy loading
-- Minimize o uso de `useEffect` e `setState`
+- Minimize ao máximo o uso de `useEffect` e `setState`
 - Prefira `Server Components` (RSC) sempre que possível
 - Use carregamento dinâmico para componentes não críticos
 - Implemente estratégias de cache adequadas

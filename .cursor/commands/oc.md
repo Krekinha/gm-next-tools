@@ -1,0 +1,1 @@
+oc (only chat) significa que o agente não irá alterar nada no código e/ou arquivos do projeto, podendo apenas usá-los como contexto para a conversa atual; não irá criar nenhum arquivo no projeto; poderá usar mcps para fazer testes ou obter contexto desde que isso não incorra em alterações no projeto; faça sugestões; entenda o 

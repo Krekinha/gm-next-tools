@@ -213,6 +213,25 @@ pnpm add <pkg>    # Adiciona nova dependência
 - Zod: Validação de schemas
 - Sonner: Sistema de notificações
 
+## 🔍 Verificação de Qualidade
+
+### Antes de Finalizar
+1. **Execute `pnpm check`** para verificar código
+2. **Teste com Playwright** para validar interface
+3. **Verifique autenticação** se modificada
+4. **Valide middleware** se alterado
+5. **Teste formulários** com schemas Zod
+6. **Atualize documentação** se necessário
+
+### Indicadores de Sucesso
+- ✅ Código compila sem erros
+- ✅ Interface funciona em diferentes dispositivos
+- ✅ Autenticação funciona corretamente
+- ✅ Middleware protege rotas adequadamente
+- ✅ Formulários validam dados corretamente
+- ✅ Performance atende métricas estabelecidas
+- ✅ Acessibilidade atende padrões WCAG
+
 ---
 
 **Última Atualização**: Dezembro 2024  

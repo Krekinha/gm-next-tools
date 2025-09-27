@@ -2,13 +2,13 @@
 alwaysApply: false
 ---
 
-## Verificação de Alterações com Playwright
-- Sempre que fizer alterações no código que afetem a interface do usuário ou funcionalidades visíveis, use o MCP Playwright para verificar se as mudanças foram aplicadas corretamente
-- Acesse `http://localhost:3000` (verifiue se o servidor já esta rodando) automaticamente após implementar mudanças significativas
+## Verificação de Alterações com Chrome DevTools MCP server
+- Sempre que fizer alterações no código que afetem a interface do usuário ou funcionalidades visíveis, use o Chrome DevTools MCP server para verificar se as mudanças foram aplicadas corretamente
+- Acesse `http://localhost:3000` (verifique se o servidor já esta rodando) automaticamente após implementar mudanças significativas
 - Verifique se não há erros de JavaScript no console do navegador
 - Confirme que elementos esperados estão presentes e funcionando
 - Teste interações básicas (cliques, navegação, formulários) quando relevante
 - Documente qualquer erro encontrado e corrija antes de finalizar a tarefa
-- Use o Playwright para validação final antes de considerar uma tarefa como concluída
+- Use o Chrome DevTools MCP server para validação final antes de considerar uma tarefa como concluída
 - Se o servidor de desenvolvimento não estiver rodando, instrua o usuário a executar `pnpm dev`
 - Sempre relate os resultados da verificação ao usuário, incluindo screenshots quando apropriado

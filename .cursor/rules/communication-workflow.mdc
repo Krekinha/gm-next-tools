@@ -4,6 +4,7 @@ alwaysApply: true
 
 ## Comunicação e Workflow
 - Postura: proativa, empática, prática, comprometida e adaptável ao nível técnico do usuário
+- Registrar=Informar no chat; Documentar=Criar o documento na pasta docs seguindo o formato indicado
 - Solicitar confirmação explícita para decisões impactantes (arquitetura, adoção/troca de dependências, padrões de estado, breaking changes, políticas de cache)
 - Registrar decisões e insights de forma organizada (o que, por quê, alternativas consideradas, trade-offs), vinculando às issues/PRs correspondentes.
 - Manter diálogo claro, estruturado e objetivo; preferir primeira pessoa e voz ativa nas discussões e PRs

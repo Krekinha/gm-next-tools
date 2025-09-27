@@ -4,7 +4,17 @@
 
 ## 🚀 Visão Geral
 
-GM Tools é uma aplicação web moderna construída com Next.js 15 e React 19, projetada para fornecer uma suite integrada de ferramentas de produtividade. A aplicação utiliza o App Router do Next.js e componentes modernos para uma experiência de usuário fluida e responsiva.
+GM Tools é uma aplicação web moderna construída com Next.js 15 e React 19, projetada para fornecer uma suite integrada de ferramentas de produtividade. A aplicação utiliza o App Router do Next.js, Server Components e componentes modernos para uma experiência de usuário fluida e responsiva.
+
+### 🎯 Objetivo Principal
+Centralizar ferramentas de produtividade em uma única interface moderna, reduzindo o context switching e melhorando a eficiência do trabalho diário.
+
+### 🏆 Diferenciais
+- **Arquitetura Moderna**: Next.js 15 com App Router e React 19
+- **Performance Otimizada**: Server Components e Turbopack
+- **Segurança Robusta**: Autenticação Supabase com middleware de proteção
+- **UX Consistente**: Design system unificado com Shadcn UI
+- **Desenvolvimento Ágil**: Biome para linting/formatting e automação completa
 
 ## 🏗️ Arquitetura
 
@@ -55,34 +65,80 @@ gm-tools/
 
 ### Decisões Arquiteturais
 
+#### 🏗️ Arquitetura de Aplicação
 1. **App Router**: Escolhido para aproveitar Server Components e melhor performance
 2. **Layout Compartilhado**: Sidebar e topbar compartilhados entre todas as rotas via layout root
 3. **Layout de Auth**: Layout específico para páginas de autenticação sem sidebar/topbar
-4. **Supabase Auth**: Sistema de autenticação nativo com PostgreSQL
-5. **Middleware de Proteção**: Proteção automática de rotas com redirecionamentos
-6. **Biome**: Substituiu ESLint/Prettier para lint e formatação mais rápida
-7. **Shadcn UI**: Componentes customizáveis baseados em Radix UI
-8. **TypeScript**: Tipagem estática para melhor DX e manutenibilidade
-9. **Zod**: Validação de dados com schemas centralizados
+4. **Server-First**: Preferência por Server Components para melhor SEO e performance
+
+#### 🔐 Segurança e Autenticação
+5. **Supabase Auth**: Sistema de autenticação nativo com PostgreSQL
+6. **Middleware de Proteção**: Proteção automática de rotas com redirecionamentos
+7. **Sessões Persistentes**: Gerenciamento de estado de autenticação no servidor
+8. **Validação Zod**: Schemas centralizados para validação de dados
+
+#### 🛠️ Ferramentas de Desenvolvimento
+9. **Biome**: Substituiu ESLint/Prettier para lint e formatação mais rápida
 10. **Turbopack**: Bundler mais rápido para desenvolvimento
-11. **Regras Organizadas**: Sistema de regras modular em `.cursor/rules/` para facilitar manutenção
+11. **TypeScript**: Tipagem estática para melhor DX e manutenibilidade
+12. **Regras Organizadas**: Sistema de regras modular em `.cursor/rules/` para facilitar manutenção
 
-## 📦 Scripts Disponíveis
+#### 🎨 Interface e UX
+13. **Shadcn UI**: Componentes customizáveis baseados em Radix UI
+14. **Tema Unificado**: Sistema de cores consistente com modo claro/escuro
+15. **Responsividade**: Mobile-first com breakpoints bem definidos
+16. **Acessibilidade**: Componentes compatíveis com WCAG 2.1 AA
 
+### 🌍 Ambientes
+
+#### Desenvolvimento Local
+- **URL**: `http://localhost:3000`
+- **Hot Reload**: Turbopack com recarga instantânea
+- **Debug**: Chrome DevTools integrado
+- **Linting**: Biome em tempo real
+
+#### Staging (Planejado)
+- **URL**: `https://gm-tools-staging.vercel.app`
+- **Deploy**: Automático via GitHub Actions
+- **Dados**: Supabase staging environment
+- **Testes**: Playwright automatizados
+
+#### Produção (Planejado)
+- **URL**: `https://gm-tools.vercel.app`
+- **Deploy**: Manual via Vercel CLI
+- **Dados**: Supabase production environment
+- **Monitoramento**: Vercel Analytics + Sentry
+- **CDN**: Global edge network
+
+## 📦 Scripts e Automação
+
+### 🚀 Scripts de Desenvolvimento
 ```bash
 # Desenvolvimento
 pnpm dev          # Inicia servidor de desenvolvimento com Turbopack
-
-# Build e Deploy
 pnpm build        # Build de produção com Turbopack
 pnpm start        # Inicia servidor de produção
 
-# Code Quality
+# Code Quality (Automatizado)
 pnpm lint         # Executa lint com Biome
 pnpm format       # Formata código com Biome
 pnpm check        # Verifica e formata código
 pnpm fix          # Corrige problemas automaticamente
 ```
+
+### 🔧 Automação Implementada
+- **Linting Automático**: Biome configurado para manter consistência de código
+- **Formatação Automática**: Padrões de código aplicados automaticamente
+- **Hot Reload**: Turbopack com recarga instantânea durante desenvolvimento
+- **Type Checking**: TypeScript em modo strict para detecção precoce de erros
+- **Exclusões Inteligentes**: `components/ui` excluído do linting (gerados pelo shadcn)
+
+### 📈 Oportunidades de Automação (Planejadas)
+- **Pre-commit Hooks**: Validação automática antes de commits
+- **CI/CD Pipeline**: GitHub Actions para testes e deploy
+- **Geração de Componentes**: Scripts para criar componentes padronizados
+- **Deploy Automatizado**: Deploy automático em push para main
+- **Monitoramento**: Alertas automáticos para problemas de performance
 
 ## 🚀 Como Executar
 

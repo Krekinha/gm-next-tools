@@ -51,12 +51,7 @@ export default function RootLayout({
               <div className="flex flex-1 flex-col gap-4 p-4 pt-0">{children}</div>
             </SidebarInset>
           </SidebarProvider>
-          <Toaster 
-            position="top-right"
-            expand={true}
-            richColors={true}
-            closeButton={true}
-          />
+          <Toaster position="top-right" expand={true} richColors={true} closeButton={true} />
         </ThemeProvider>
       </body>
     </html>
